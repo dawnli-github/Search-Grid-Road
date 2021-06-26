@@ -20,6 +20,16 @@ using namespace std;
 namespace Road {
 
 void Resolve::run() {
+  // Build Dijkstra model
+  cout << endl << "Dijkstra Model Flow" << endl << endl;
+  unordered_map<GridLocation, GridLocation> dj_came_from;
+  unordered_map<GridLocation, int> dj_cost_so_far;
+  Model::dijkstra_search<Graph, GridLocation>(_graph, _start, _goal,
+                                              dj_came_from, dj_cost_so_far);
+  vector<GridLocation> dj_path = reconstruct_path(_start, _goal, dj_came_from);
+  draw(_graph, 3, &dj_path);
+  cout << endl << "The Model Cost :" << get_cost(dj_path) << endl;
+  cout << endl << string(100, '#') << endl;
   // Build A* model
   cout << endl << "A* Model Flow" << endl << endl;
   unordered_map<GridLocation, GridLocation> came_from;
@@ -41,16 +51,6 @@ void Resolve::run() {
       reconstruct_path(_start, _goal, opt_came_from);
   draw(_graph, 3, &opt_path);
   cout << endl << "The Model Cost :" << get_cost(opt_path) << endl;
-  cout << endl << string(100, '#') << endl;
-  // Build Dijkstra model
-  cout << endl << "Dijkstra Model Flow" << endl << endl;
-  unordered_map<GridLocation, GridLocation> dj_came_from;
-  unordered_map<GridLocation, int> dj_cost_so_far;
-  Model::dijkstra_search<Graph, GridLocation>(_graph, _start, _goal,
-                                              dj_came_from, dj_cost_so_far);
-  vector<GridLocation> dj_path = reconstruct_path(_start, _goal, dj_came_from);
-  draw(_graph, 3, &dj_path);
-  cout << endl << "The Model Cost :" << get_cost(dj_path) << endl;
   cout << endl << string(100, '#') << endl;
 }
 
