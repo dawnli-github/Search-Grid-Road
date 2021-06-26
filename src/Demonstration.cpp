@@ -8,9 +8,9 @@
  * @copyright Copyright (c) 2021
  *
  */
-#include <stdlib.h>
 
 #include <ctime>
+#include <random>
 
 #include "../include/Resolve.h"
 
@@ -18,17 +18,20 @@ using namespace std;
 
 using namespace Road;
 int main() {
-  srand(time(0));
   const int size = 30;
   Resolve test;
   test.set_size(size, size);
   vector<GridLocation> walls;
+
   int count = 0;
-  GridLocation start{rand() % (size / 4), rand() % (size / 4)};
-  GridLocation goal{(size / 2) + rand() % (size / 2),
-                    (size / 2) + rand() % (size / 2)};
-  while (count <= size * 15) {
-    GridLocation id{rand() % size, rand() % size};
+  random_device rand_engine;
+  uniform_int_distribution<int> rand_start(0, size / 4);
+  uniform_int_distribution<int> rand_end(3 * size / 4, size);
+  uniform_int_distribution<int> rand_id(0, size);
+  GridLocation start{rand_start(rand_engine), rand_start(rand_engine)};
+  GridLocation goal{rand_end(rand_engine), rand_end(rand_engine)};
+  while (count <= size * size / 2) {
+    GridLocation id{rand_id(rand_engine), rand_id(rand_engine)};
     if (id != start && id != goal) {
       walls.emplace_back(id);
       ++count;

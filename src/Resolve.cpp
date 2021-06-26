@@ -29,7 +29,8 @@ void Resolve::run() {
   vector<GridLocation> dj_path = reconstruct_path(_start, _goal, dj_came_from);
   draw(_graph, 3, &dj_path);
   cout << endl << "The Model Cost :" << get_cost(dj_path) << endl;
-  cout << endl << string(100, '#') << endl;
+  cout << endl
+       << "----------------------------------------------------" << endl;
   // Build A* model
   cout << endl << "A* Model Flow" << endl << endl;
   unordered_map<GridLocation, GridLocation> came_from;
@@ -39,7 +40,8 @@ void Resolve::run() {
   vector<GridLocation> path = reconstruct_path(_start, _goal, came_from);
   draw(_graph, 3, &path);
   cout << endl << "The Model Cost :" << get_cost(path) << endl;
-  cout << endl << string(100, '#') << endl;
+  cout << endl
+       << "----------------------------------------------------" << endl;
   // Build A* opt model
   cout << endl << "A* Optimized Model Flow" << endl << endl;
   unordered_map<GridLocation, GridLocation> opt_came_from;
@@ -51,7 +53,8 @@ void Resolve::run() {
       reconstruct_path(_start, _goal, opt_came_from);
   draw(_graph, 3, &opt_path);
   cout << endl << "The Model Cost :" << get_cost(opt_path) << endl;
-  cout << endl << string(100, '#') << endl;
+  cout << endl
+       << "----------------------------------------------------" << endl;
 }
 
 vector<GridLocation> Resolve::reconstruct_path(
