@@ -1,14 +1,21 @@
 #include <gtest/gtest.h>
 
-#include "../../include/Utility.h"
 #include "../../include/Resolve.h"
+#include "../../include/Utility.h"
 
 using namespace Road;
 
-TEST(TmpAddTest, CheckValues) {
+TEST(AStarHeuristicTest, CheckManhatten) {
   Road::GridLocation x{1, 4};
   Road::GridLocation y{2, 6};
-  ASSERT_EQ(Heuristic::manhattan(x, y), 30);
+  ASSERT_EQ(Heuristic::manhattan(x, y), 15);
+  EXPECT_TRUE(true);
+}
+
+TEST(AStarHeuristicTest, CheckOptManhatten) {
+  Road::GridLocation x{2, 7};
+  Road::GridLocation y{4, 10};
+  ASSERT_EQ(Heuristic::optManhattan(x, y), 19);
   EXPECT_TRUE(true);
 }
 

@@ -23,7 +23,7 @@ class Heuristic {
   static int manhattan(GridLocation a, GridLocation b) {
     return 5 * (abs(a.x - b.x) + abs(a.y - b.y));
   }
-  static int opt_manhattan(GridLocation a, GridLocation b) {
+  static int optManhattan(GridLocation a, GridLocation b) {
     int dx = abs(a.x - b.x);
     int dy = abs(a.y - b.y);
     return 5 * max(dx, dy) + 2 * min(dx, dy);

@@ -55,11 +55,12 @@ class Model {
   }
 
   // Dijkstra algorithm
-  template <typename Location, typename Graph>
-  void dijkstra_search(Graph graph, Location start, Location goal,
-                       std::unordered_map<Location, Location>& came_from,
-                       std::unordered_map<Location, double>& cost_so_far) {
-    PriorityQueue<Location, double> frontier;
+  template <typename Graph,typename Location>
+  static void dijkstra_search(
+      Graph graph, Location start, Location goal,
+      std::unordered_map<Location, Location>& came_from,
+      std::unordered_map<Location, int>& cost_so_far) {
+    PriorityQueue<Location, int> frontier;
     frontier.put(start, 0);
 
     came_from[start] = start;
@@ -73,7 +74,7 @@ class Model {
       }
 
       for (Location next : graph.get_neighbors(current)) {
-        double new_cost = cost_so_far[current] + graph.cost(current, next);
+        int new_cost = cost_so_far[current] + graph.cost(current, next);
         if (cost_so_far.find(next) == cost_so_far.end() ||
             new_cost < cost_so_far[next]) {
           cost_so_far[next] = new_cost;

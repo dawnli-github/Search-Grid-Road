@@ -12,7 +12,7 @@
 
 #include <ctime>
 
-#include "include/Resolve.h"
+#include "../include/Resolve.h"
 
 using namespace std;
 

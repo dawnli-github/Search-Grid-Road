@@ -27,26 +27,31 @@ void Resolve::run() {
   Model::a_star_search<Graph, GridLocation>(
       _graph, _start, _goal, Heuristic::manhattan, came_from, cost_so_far);
   vector<GridLocation> path = reconstruct_path(_start, _goal, came_from);
-  draw(_graph, 3, &cost_so_far, &came_from, &path);
+  draw(_graph, 3, &path);
+  cout << endl << "The Model Cost :" << get_cost(path) << endl;
+  cout << endl << string(100, '#') << endl;
   // Build A* opt model
   cout << endl << "A* Optimized Model Flow" << endl << endl;
   unordered_map<GridLocation, GridLocation> opt_came_from;
   unordered_map<GridLocation, int> opt_cost_so_far;
   Model::a_star_search<Graph, GridLocation>(_graph, _start, _goal,
-                                            Heuristic::manhattan, opt_came_from,
-                                            opt_cost_so_far);
+                                            Heuristic::optManhattan,
+                                            opt_came_from, opt_cost_so_far);
   vector<GridLocation> opt_path =
       reconstruct_path(_start, _goal, opt_came_from);
-  draw(_graph, 3, &opt_cost_so_far, &opt_came_from, &opt_path);
+  draw(_graph, 3, &opt_path);
+  cout << endl << "The Model Cost :" << get_cost(opt_path) << endl;
+  cout << endl << string(100, '#') << endl;
   // Build Dijkstra model
   cout << endl << "Dijkstra Model Flow" << endl << endl;
   unordered_map<GridLocation, GridLocation> dj_came_from;
   unordered_map<GridLocation, int> dj_cost_so_far;
-  Model::a_star_search<Graph, GridLocation>(_graph, _start, _goal,
-                                            Heuristic::manhattan, dj_came_from,
-                                            dj_cost_so_far);
+  Model::dijkstra_search<Graph, GridLocation>(_graph, _start, _goal,
+                                              dj_came_from, dj_cost_so_far);
   vector<GridLocation> dj_path = reconstruct_path(_start, _goal, dj_came_from);
-  draw(_graph, 3, &dj_cost_so_far, &dj_came_from, &dj_path);
+  draw(_graph, 3, &dj_path);
+  cout << endl << "The Model Cost :" << get_cost(dj_path) << endl;
+  cout << endl << string(100, '#') << endl;
 }
 
 vector<GridLocation> Resolve::reconstruct_path(
@@ -64,8 +69,6 @@ vector<GridLocation> Resolve::reconstruct_path(
 }
 
 void Resolve::draw(const Graph& graph, int field_width,
-                   unordered_map<GridLocation, int>* distances,
-                   unordered_map<GridLocation, GridLocation>* point_to,
                    vector<GridLocation>* path) {
   for (int y = 0; y != graph.get_height(); ++y) {
     for (int x = 0; x != graph.get_width(); ++x) {

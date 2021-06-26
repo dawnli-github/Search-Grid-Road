@@ -192,7 +192,7 @@ CMAKE_PROJECT_DESCRIPTION:STATIC=
 CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
 
 //Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=RoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoad
+CMAKE_PROJECT_NAME:STATIC=Project
 
 //Value Computed by CMake
 CMAKE_PROJECT_VERSION:STATIC=0.1.0
@@ -359,6 +359,48 @@ Project_VERBOSE_OUTPUT:BOOL=ON
 Project_WARNINGS_AS_ERRORS:BOOL=OFF
 
 //Value Computed by CMake
+RoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadTests_BINARY_DIR:STATIC=/Project/liweiguo/test/modern-cpp-template/build/test
+
+//Value Computed by CMake
+RoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadTests_SOURCE_DIR:STATIC=/Project/liweiguo/test/modern-cpp-template/test
+
+//Value Computed by CMake
+RoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoad_BINARY_DIR:STATIC=/Project/liweiguo/test/modern-cpp-template/build
+
+//Value Computed by CMake
+RoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoad_SOURCE_DIR:STATIC=/Project/liweiguo/test/modern-cpp-template
+
+//Value Computed by CMake
+RoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadTests_BINARY_DIR:STATIC=/Project/liweiguo/test/modern-cpp-template/build/test
+
+//Value Computed by CMake
+RoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadTests_SOURCE_DIR:STATIC=/Project/liweiguo/test/modern-cpp-template/test
+
+//Value Computed by CMake
+RoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoad_BINARY_DIR:STATIC=/Project/liweiguo/test/modern-cpp-template/build
+
+//Value Computed by CMake
+RoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoad_SOURCE_DIR:STATIC=/Project/liweiguo/test/modern-cpp-template
+
+//Value Computed by CMake
+RoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadTests_BINARY_DIR:STATIC=/Project/liweiguo/test/modern-cpp-template/build/test
+
+//Value Computed by CMake
+RoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadTests_SOURCE_DIR:STATIC=/Project/liweiguo/test/modern-cpp-template/test
+
+//Value Computed by CMake
+RoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoad_BINARY_DIR:STATIC=/Project/liweiguo/test/modern-cpp-template/build
+
+//Value Computed by CMake
+RoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoad_SOURCE_DIR:STATIC=/Project/liweiguo/test/modern-cpp-template
+
+//Value Computed by CMake
+RoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoad_BINARY_DIR:STATIC=/Project/liweiguo/test/modern-cpp-template/build
+
+//Value Computed by CMake
+RoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoad_SOURCE_DIR:STATIC=/Project/liweiguo/test/modern-cpp-template
+
+//Value Computed by CMake
 RoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoad_BINARY_DIR:STATIC=/Project/liweiguo/test/modern-cpp-template/build
 
 //Value Computed by CMake
@@ -509,10 +551,76 @@ RoadRoad_BINARY_DIR:STATIC=/Project/liweiguo/test/modern-cpp-template/build
 RoadRoad_SOURCE_DIR:STATIC=/Project/liweiguo/test/modern-cpp-template
 
 //Value Computed by CMake
+RoadTests_BINARY_DIR:STATIC=/Project/liweiguo/test/modern-cpp-template/build/test
+
+//Value Computed by CMake
+RoadTests_SOURCE_DIR:STATIC=/Project/liweiguo/test/modern-cpp-template/test
+
+//Value Computed by CMake
 Road_BINARY_DIR:STATIC=/Project/liweiguo/test/modern-cpp-template/build
+
+//Build the project as an executable, rather than a library.
+Road_BUILD_EXECUTABLE:BOOL=OFF
+
+//Build the project as a header-only library.
+Road_BUILD_HEADERS_ONLY:BOOL=OFF
+
+//Path to a program.
+Road_CLANG_FORMAT_BINARY:FILEPATH=/usr/bin/clang-format
+
+//Enable the usage of Ccache, in order to speed up rebuild times.
+Road_ENABLE_CCACHE:BOOL=ON
+
+//Enable static analysis with Clang-Tidy.
+Road_ENABLE_CLANG_TIDY:BOOL=ON
+
+//Enable code coverage through GCC.
+Road_ENABLE_CODE_COVERAGE:BOOL=OFF
+
+//Enable the Conan package manager for this project.
+Road_ENABLE_CONAN:BOOL=OFF
+
+//Enable static analysis with Cppcheck.
+Road_ENABLE_CPPCHECK:BOOL=OFF
+
+//Enable Doxygen documentation builds of source.
+Road_ENABLE_DOXYGEN:BOOL=OFF
+
+//Enable Interprocedural Optimization, aka Link Time Optimization
+// (LTO).
+Road_ENABLE_LTO:BOOL=OFF
+
+//Enable unit tests for the projects (from the `test` subfolder).
+Road_ENABLE_UNIT_TESTING:BOOL=ON
+
+//Enable the Vcpkg package manager for this project.
+Road_ENABLE_VCPKG:BOOL=OFF
+
+//Create a `project_export.h` file containing all exported symbols.
+Road_GENERATE_EXPORT_HEADER:BOOL=OFF
 
 //Value Computed by CMake
 Road_SOURCE_DIR:STATIC=/Project/liweiguo/test/modern-cpp-template
+
+//Use alternative names for the project, such as naming the include
+// directory all lowercase.
+Road_USE_ALT_NAMES:BOOL=ON
+
+//Use the Catch2 project for creating unit tests.
+Road_USE_CATCH2:BOOL=OFF
+
+//Use the GoogleMock project for extending the unit tests.
+Road_USE_GOOGLE_MOCK:BOOL=OFF
+
+//Use the GoogleTest project for creating unit tests.
+Road_USE_GTEST:BOOL=ON
+
+//Enable verbose output, allowing for a better understanding of
+// each step taken.
+Road_VERBOSE_OUTPUT:BOOL=ON
+
+//Treat compiler warnings as errors.
+Road_WARNINGS_AS_ERRORS:BOOL=OFF
 
 //Value Computed by CMake
 study_case_BINARY_DIR:STATIC=/Project/liweiguo/test/modern-cpp-template/build
@@ -663,7 +771,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=1
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=2
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

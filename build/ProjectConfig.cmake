@@ -26,7 +26,7 @@ endmacro()
 
 ####################################################################################
 
-set_and_check(Project_INCLUDE_DIR "")
+set_and_check(Project_INCLUDE_DIR "/usr/local/include")
 
 include("${CMAKE_CURRENT_LIST_DIR}/ProjectTargets.cmake")
 

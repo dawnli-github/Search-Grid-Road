@@ -6,7 +6,7 @@
 # It is included in the main 'build.ninja'.
 
 # =============================================================================
-# Project: RoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoad
+# Project: Project
 # Configuration: Debug
 # =============================================================================
 # =============================================================================
@@ -22,7 +22,7 @@ rule CUSTOM_COMMAND
 #############################################
 # Rule for compiling CXX files.
 
-rule CXX_COMPILER__RoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoad
+rule CXX_COMPILER__Demonstration
   depfile = $DEP_FILE
   deps = gcc
   command = /usr/bin/x86_64-linux-gnu-g++-9  $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
@@ -32,7 +32,7 @@ rule CXX_COMPILER__RoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadR
 #############################################
 # Rule for linking CXX executable.
 
-rule CXX_EXECUTABLE_LINKER__RoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoad
+rule CXX_EXECUTABLE_LINKER__Demonstration
   command = $PRE_LINK && /usr/bin/x86_64-linux-gnu-g++-9  $FLAGS  $LINK_FLAGS $in  -o $TARGET_FILE $LINK_PATH $LINK_LIBRARIES && $POST_BUILD
   description = Linking CXX executable $TARGET_FILE
   restat = $RESTAT
@@ -41,26 +41,7 @@ rule CXX_EXECUTABLE_LINKER__RoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoad
 #############################################
 # Rule for compiling CXX files.
 
-rule CXX_COMPILER__run
-  depfile = $DEP_FILE
-  deps = gcc
-  command = /usr/bin/x86_64-linux-gnu-g++-9  $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
-  description = Building CXX object $out
-
-
-#############################################
-# Rule for linking CXX executable.
-
-rule CXX_EXECUTABLE_LINKER__run
-  command = $PRE_LINK && /usr/bin/x86_64-linux-gnu-g++-9  $FLAGS  $LINK_FLAGS $in  -o $TARGET_FILE $LINK_PATH $LINK_LIBRARIES && $POST_BUILD
-  description = Linking CXX executable $TARGET_FILE
-  restat = $RESTAT
-
-
-#############################################
-# Rule for compiling CXX files.
-
-rule CXX_COMPILER__Road
+rule CXX_COMPILER__main
   depfile = $DEP_FILE
   deps = gcc
   command = /usr/bin/x86_64-linux-gnu-g++-9  $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
@@ -70,9 +51,47 @@ rule CXX_COMPILER__Road
 #############################################
 # Rule for linking CXX static library.
 
-rule CXX_STATIC_LIBRARY_LINKER__Road
+rule CXX_STATIC_LIBRARY_LINKER__main
   command = $PRE_LINK && /usr/bin/cmake -E remove $TARGET_FILE && /usr/bin/ar qc $TARGET_FILE $LINK_FLAGS $in && /usr/bin/ranlib $TARGET_FILE && $POST_BUILD
   description = Linking CXX static library $TARGET_FILE
+  restat = $RESTAT
+
+
+#############################################
+# Rule for compiling CXX files.
+
+rule CXX_COMPILER__Project
+  depfile = $DEP_FILE
+  deps = gcc
+  command = /usr/bin/x86_64-linux-gnu-g++-9  $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
+  description = Building CXX object $out
+
+
+#############################################
+# Rule for linking CXX static library.
+
+rule CXX_STATIC_LIBRARY_LINKER__Project
+  command = $PRE_LINK && /usr/bin/cmake -E remove $TARGET_FILE && /usr/bin/ar qc $TARGET_FILE $LINK_FLAGS $in && /usr/bin/ranlib $TARGET_FILE && $POST_BUILD
+  description = Linking CXX static library $TARGET_FILE
+  restat = $RESTAT
+
+
+#############################################
+# Rule for compiling CXX files.
+
+rule CXX_COMPILER__ProjectTests
+  depfile = $DEP_FILE
+  deps = gcc
+  command = /usr/bin/x86_64-linux-gnu-g++-9  $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
+  description = Building CXX object $out
+
+
+#############################################
+# Rule for linking CXX executable.
+
+rule CXX_EXECUTABLE_LINKER__ProjectTests
+  command = $PRE_LINK && /usr/bin/x86_64-linux-gnu-g++-9  $FLAGS  $LINK_FLAGS $in  -o $TARGET_FILE $LINK_PATH $LINK_LIBRARIES && $POST_BUILD
+  description = Linking CXX executable $TARGET_FILE
   restat = $RESTAT
 
 

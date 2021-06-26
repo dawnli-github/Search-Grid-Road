@@ -1,5 +1,6 @@
 set(sources
-    src/tmp.cpp
+    src/Graph.cpp
+    src/Resolve.cpp
 )
 
 set(exe_sources
@@ -8,5 +9,9 @@ set(exe_sources
 )
 
 set(headers
-    include/project/tmp.hpp
+    include/Graph.h
+    include/Model.h
+    include/PriorityQueue.h
+    include/Resolve.h
+    include/Utility.h
 )

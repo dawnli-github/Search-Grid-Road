@@ -11,7 +11,7 @@
 # =============================================================================
 
 # =============================================================================
-# Project: RoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoad
+# Project: Project
 # Configuration: Debug
 # =============================================================================
 
@@ -31,80 +31,21 @@ include rules.ninja
 
 
 #############################################
-# Utility command for edit_cache
+# Utility command for install
 
-build CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /Project/liweiguo/test/modern-cpp-template/build && /usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-  DESC = No interactive CMake dialog available...
+build CMakeFiles/install.util: CUSTOM_COMMAND all
+  COMMAND = cd /Project/liweiguo/test/modern-cpp-template/build && /usr/bin/cmake -P cmake_install.cmake
+  DESC = Install the project...
+  pool = console
   restat = 1
 
-build edit_cache: phony CMakeFiles/edit_cache.util
-
-# =============================================================================
-# Object build statements for EXECUTABLE target RoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoad
+build install: phony CMakeFiles/install.util
 
 
 #############################################
-# Order-only phony target for RoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoad
+# Utility command for list_install_components
 
-build cmake_object_order_depends_target_RoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoad: phony || cmake_object_order_depends_target_Road
-
-build CMakeFiles/RoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoad.dir/test/src/tmp_test.cpp.o: CXX_COMPILER__RoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoad ../test/src/tmp_test.cpp || cmake_object_order_depends_target_RoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoad
-  DEP_FILE = CMakeFiles/RoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoad.dir/test/src/tmp_test.cpp.o.d
-  FLAGS = -g
-  INCLUDES = -I../include
-  OBJECT_DIR = CMakeFiles/RoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoad.dir
-  OBJECT_FILE_DIR = CMakeFiles/RoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoad.dir/test/src
-
-
-# =============================================================================
-# Link build statements for EXECUTABLE target RoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoad
-
-
-#############################################
-# Link the executable ../bin/RoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoad
-
-build ../bin/RoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoad: CXX_EXECUTABLE_LINKER__RoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoad CMakeFiles/RoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoad.dir/test/src/tmp_test.cpp.o | libRoad.a || libRoad.a
-  FLAGS = -g
-  LINK_LIBRARIES = libRoad.a
-  OBJECT_DIR = CMakeFiles/RoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoad.dir
-  POST_BUILD = :
-  PRE_LINK = :
-  TARGET_FILE = ../bin/RoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoad
-  TARGET_PDB = RoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoad.dbg
-
-# =============================================================================
-# Object build statements for EXECUTABLE target run
-
-
-#############################################
-# Order-only phony target for run
-
-build cmake_object_order_depends_target_run: phony || cmake_object_order_depends_target_Road
-
-build CMakeFiles/run.dir/main.cpp.o: CXX_COMPILER__run ../main.cpp || cmake_object_order_depends_target_run
-  DEP_FILE = CMakeFiles/run.dir/main.cpp.o.d
-  FLAGS = -g
-  INCLUDES = -I../include
-  OBJECT_DIR = CMakeFiles/run.dir
-  OBJECT_FILE_DIR = CMakeFiles/run.dir
-
-
-# =============================================================================
-# Link build statements for EXECUTABLE target run
-
-
-#############################################
-# Link the executable ../bin/run
-
-build ../bin/run: CXX_EXECUTABLE_LINKER__run CMakeFiles/run.dir/main.cpp.o | libRoad.a || libRoad.a
-  FLAGS = -g
-  LINK_LIBRARIES = libRoad.a
-  OBJECT_DIR = CMakeFiles/run.dir
-  POST_BUILD = :
-  PRE_LINK = :
-  TARGET_FILE = ../bin/run
-  TARGET_PDB = run.dbg
+build list_install_components: phony
 
 
 #############################################
@@ -118,60 +59,302 @@ build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
 
 build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 
-# =============================================================================
-# Object build statements for STATIC_LIBRARY target Road
+
+#############################################
+# Utility command for edit_cache
+
+build CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Project/liweiguo/test/modern-cpp-template/build && /usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build edit_cache: phony CMakeFiles/edit_cache.util
 
 
 #############################################
-# Order-only phony target for Road
+# Utility command for test
 
-build cmake_object_order_depends_target_Road: phony || CMakeFiles/Road.dir
+build CMakeFiles/test.util: CUSTOM_COMMAND
+  COMMAND = cd /Project/liweiguo/test/modern-cpp-template/build && /usr/bin/ctest --force-new-ctest-process
+  DESC = Running tests...
+  pool = console
+  restat = 1
 
-build CMakeFiles/Road.dir/src/Graph.cpp.o: CXX_COMPILER__Road ../src/Graph.cpp || cmake_object_order_depends_target_Road
-  DEP_FILE = CMakeFiles/Road.dir/src/Graph.cpp.o.d
-  FLAGS = -g
-  INCLUDES = -I../include
-  OBJECT_DIR = CMakeFiles/Road.dir
-  OBJECT_FILE_DIR = CMakeFiles/Road.dir/src
-
-build CMakeFiles/Road.dir/src/Model.cpp.o: CXX_COMPILER__Road ../src/Model.cpp || cmake_object_order_depends_target_Road
-  DEP_FILE = CMakeFiles/Road.dir/src/Model.cpp.o.d
-  FLAGS = -g
-  INCLUDES = -I../include
-  OBJECT_DIR = CMakeFiles/Road.dir
-  OBJECT_FILE_DIR = CMakeFiles/Road.dir/src
-
-build CMakeFiles/Road.dir/src/Resolve.cpp.o: CXX_COMPILER__Road ../src/Resolve.cpp || cmake_object_order_depends_target_Road
-  DEP_FILE = CMakeFiles/Road.dir/src/Resolve.cpp.o.d
-  FLAGS = -g
-  INCLUDES = -I../include
-  OBJECT_DIR = CMakeFiles/Road.dir
-  OBJECT_FILE_DIR = CMakeFiles/Road.dir/src
-
-
-# =============================================================================
-# Link build statements for STATIC_LIBRARY target Road
+build test: phony CMakeFiles/test.util
 
 
 #############################################
-# Link the static library libRoad.a
+# Utility command for install/strip
 
-build libRoad.a: CXX_STATIC_LIBRARY_LINKER__Road CMakeFiles/Road.dir/src/Graph.cpp.o CMakeFiles/Road.dir/src/Model.cpp.o CMakeFiles/Road.dir/src/Resolve.cpp.o
-  LANGUAGE_COMPILE_FLAGS = -g
-  OBJECT_DIR = CMakeFiles/Road.dir
+build CMakeFiles/install/strip.util: CUSTOM_COMMAND all
+  COMMAND = cd /Project/liweiguo/test/modern-cpp-template/build && /usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+  DESC = Installing the project stripped...
+  pool = console
+  restat = 1
+
+build install/strip: phony CMakeFiles/install/strip.util
+
+# =============================================================================
+# Object build statements for EXECUTABLE target Demonstration
+
+
+#############################################
+# Order-only phony target for Demonstration
+
+build cmake_object_order_depends_target_Demonstration: phony || cmake_object_order_depends_target_main
+
+build CMakeFiles/Demonstration.dir/src/Demonstration.cpp.o: CXX_COMPILER__Demonstration ../src/Demonstration.cpp || cmake_object_order_depends_target_Demonstration
+  DEP_FILE = CMakeFiles/Demonstration.dir/src/Demonstration.cpp.o.d
+  FLAGS = -g
+  INCLUDES = -I../include
+  OBJECT_DIR = CMakeFiles/Demonstration.dir
+  OBJECT_FILE_DIR = CMakeFiles/Demonstration.dir/src
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target Demonstration
+
+
+#############################################
+# Link the executable ../bin/Demonstration
+
+build ../bin/Demonstration: CXX_EXECUTABLE_LINKER__Demonstration CMakeFiles/Demonstration.dir/src/Demonstration.cpp.o | libmain.a || libmain.a
+  FLAGS = -g
+  LINK_LIBRARIES = libmain.a
+  OBJECT_DIR = CMakeFiles/Demonstration.dir
   POST_BUILD = :
   PRE_LINK = :
-  TARGET_FILE = libRoad.a
-  TARGET_PDB = Road.a.dbg
+  TARGET_FILE = ../bin/Demonstration
+  TARGET_PDB = Demonstration.dbg
+
+# =============================================================================
+# Object build statements for STATIC_LIBRARY target main
+
+
+#############################################
+# Order-only phony target for main
+
+build cmake_object_order_depends_target_main: phony || CMakeFiles/main.dir
+
+build CMakeFiles/main.dir/src/Graph.cpp.o: CXX_COMPILER__main ../src/Graph.cpp || cmake_object_order_depends_target_main
+  DEP_FILE = CMakeFiles/main.dir/src/Graph.cpp.o.d
+  FLAGS = -g
+  INCLUDES = -I../include
+  OBJECT_DIR = CMakeFiles/main.dir
+  OBJECT_FILE_DIR = CMakeFiles/main.dir/src
+
+build CMakeFiles/main.dir/src/Resolve.cpp.o: CXX_COMPILER__main ../src/Resolve.cpp || cmake_object_order_depends_target_main
+  DEP_FILE = CMakeFiles/main.dir/src/Resolve.cpp.o.d
+  FLAGS = -g
+  INCLUDES = -I../include
+  OBJECT_DIR = CMakeFiles/main.dir
+  OBJECT_FILE_DIR = CMakeFiles/main.dir/src
+
+
+# =============================================================================
+# Link build statements for STATIC_LIBRARY target main
+
+
+#############################################
+# Link the static library libmain.a
+
+build libmain.a: CXX_STATIC_LIBRARY_LINKER__main CMakeFiles/main.dir/src/Graph.cpp.o CMakeFiles/main.dir/src/Resolve.cpp.o
+  LANGUAGE_COMPILE_FLAGS = -g
+  OBJECT_DIR = CMakeFiles/main.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = libmain.a
+  TARGET_PDB = main.a.dbg
+
+
+#############################################
+# Utility command for install/local
+
+build CMakeFiles/install/local.util: CUSTOM_COMMAND all
+  COMMAND = cd /Project/liweiguo/test/modern-cpp-template/build && /usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+  DESC = Installing only the local directory...
+  pool = console
+  restat = 1
+
+build install/local: phony CMakeFiles/install/local.util
+
+
+#############################################
+# Utility command for clang-format
+
+build clang-format: phony CMakeFiles/clang-format
+
+# =============================================================================
+# Object build statements for STATIC_LIBRARY target Project
+
+
+#############################################
+# Order-only phony target for Project
+
+build cmake_object_order_depends_target_Project: phony || CMakeFiles/Project.dir
+
+build CMakeFiles/Project.dir/src/Graph.cpp.o: CXX_COMPILER__Project ../src/Graph.cpp || cmake_object_order_depends_target_Project
+  DEP_FILE = CMakeFiles/Project.dir/src/Graph.cpp.o.d
+  FLAGS = -g   -Wall -Wextra -Wshadow -Wnon-virtual-dtor -Wold-style-cast -Wcast-align -Wunused -Woverloaded-virtual -Wpedantic -Wconversion -Wsign-conversion -Wnull-dereference -Wdouble-promotion -Wformat=2 -Wmisleading-indentation -Wduplicated-cond -Wduplicated-branches -Wlogical-op -Wuseless-cast -std=gnu++17
+  INCLUDES = -I../include -I../src
+  OBJECT_DIR = CMakeFiles/Project.dir
+  OBJECT_FILE_DIR = CMakeFiles/Project.dir/src
+
+build CMakeFiles/Project.dir/src/Resolve.cpp.o: CXX_COMPILER__Project ../src/Resolve.cpp || cmake_object_order_depends_target_Project
+  DEP_FILE = CMakeFiles/Project.dir/src/Resolve.cpp.o.d
+  FLAGS = -g   -Wall -Wextra -Wshadow -Wnon-virtual-dtor -Wold-style-cast -Wcast-align -Wunused -Woverloaded-virtual -Wpedantic -Wconversion -Wsign-conversion -Wnull-dereference -Wdouble-promotion -Wformat=2 -Wmisleading-indentation -Wduplicated-cond -Wduplicated-branches -Wlogical-op -Wuseless-cast -std=gnu++17
+  INCLUDES = -I../include -I../src
+  OBJECT_DIR = CMakeFiles/Project.dir
+  OBJECT_FILE_DIR = CMakeFiles/Project.dir/src
+
+
+# =============================================================================
+# Link build statements for STATIC_LIBRARY target Project
+
+
+#############################################
+# Link the static library libProject.a
+
+build libProject.a: CXX_STATIC_LIBRARY_LINKER__Project CMakeFiles/Project.dir/src/Graph.cpp.o CMakeFiles/Project.dir/src/Resolve.cpp.o
+  LANGUAGE_COMPILE_FLAGS = -g
+  OBJECT_DIR = CMakeFiles/Project.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = libProject.a
+  TARGET_PDB = Project.a.dbg
+
+
+#############################################
+# Custom command for CMakeFiles/clang-format
+
+build CMakeFiles/clang-format: CUSTOM_COMMAND
+  COMMAND = cd /Project/liweiguo/test/modern-cpp-template/build && /usr/bin/clang-format -i /Project/liweiguo/test/modern-cpp-template/src/Graph.cpp src/Resolve.cpp /Project/liweiguo/test/modern-cpp-template/include/Graph.h include/Model.h include/PriorityQueue.h include/Resolve.h include/Utility.h
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# /Project/liweiguo/test/modern-cpp-template/CMakeLists.txt
+# =============================================================================
+
+
+#############################################
+# Utility command for install/strip
+
+build test/CMakeFiles/install/strip.util: CUSTOM_COMMAND test/all
+  COMMAND = cd /Project/liweiguo/test/modern-cpp-template/build/test && /usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+  DESC = Installing the project stripped...
+  pool = console
+  restat = 1
+
+build test/install/strip: phony test/CMakeFiles/install/strip.util
+
+
+#############################################
+# Utility command for install/local
+
+build test/CMakeFiles/install/local.util: CUSTOM_COMMAND test/all
+  COMMAND = cd /Project/liweiguo/test/modern-cpp-template/build/test && /usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+  DESC = Installing only the local directory...
+  pool = console
+  restat = 1
+
+build test/install/local: phony test/CMakeFiles/install/local.util
+
+
+#############################################
+# Utility command for install
+
+build test/CMakeFiles/install.util: CUSTOM_COMMAND test/all
+  COMMAND = cd /Project/liweiguo/test/modern-cpp-template/build/test && /usr/bin/cmake -P cmake_install.cmake
+  DESC = Install the project...
+  pool = console
+  restat = 1
+
+build test/install: phony test/CMakeFiles/install.util
+
+
+#############################################
+# Utility command for list_install_components
+
+build test/list_install_components: phony
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build test/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Project/liweiguo/test/modern-cpp-template/build/test && /usr/bin/cmake -S/Project/liweiguo/test/modern-cpp-template -B/Project/liweiguo/test/modern-cpp-template/build
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build test/rebuild_cache: phony test/CMakeFiles/rebuild_cache.util
+
+
+#############################################
+# Utility command for edit_cache
+
+build test/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Project/liweiguo/test/modern-cpp-template/build/test && /usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build test/edit_cache: phony test/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for test
+
+build test/CMakeFiles/test.util: CUSTOM_COMMAND
+  COMMAND = cd /Project/liweiguo/test/modern-cpp-template/build/test && /usr/bin/ctest --force-new-ctest-process
+  DESC = Running tests...
+  pool = console
+  restat = 1
+
+build test/test: phony test/CMakeFiles/test.util
+
+# =============================================================================
+# Object build statements for EXECUTABLE target ProjectTests
+
+
+#############################################
+# Order-only phony target for ProjectTests
+
+build cmake_object_order_depends_target_ProjectTests: phony || cmake_object_order_depends_target_Project cmake_object_order_depends_target_main
+
+build test/CMakeFiles/ProjectTests.dir/src/tmp_test.cpp.o: CXX_COMPILER__ProjectTests ../test/src/tmp_test.cpp || cmake_object_order_depends_target_ProjectTests
+  DEP_FILE = test/CMakeFiles/ProjectTests.dir/src/tmp_test.cpp.o.d
+  FLAGS = -g   -Wall -Wextra -Wshadow -Wnon-virtual-dtor -Wold-style-cast -Wcast-align -Wunused -Woverloaded-virtual -Wpedantic -Wconversion -Wsign-conversion -Wnull-dereference -Wdouble-promotion -Wformat=2 -Wmisleading-indentation -Wduplicated-cond -Wduplicated-branches -Wlogical-op -Wuseless-cast -std=gnu++17
+  INCLUDES = -I../include
+  OBJECT_DIR = test/CMakeFiles/ProjectTests.dir
+  OBJECT_FILE_DIR = test/CMakeFiles/ProjectTests.dir/src
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target ProjectTests
+
+
+#############################################
+# Link the executable ../bin/ProjectTests
+
+build ../bin/ProjectTests: CXX_EXECUTABLE_LINKER__ProjectTests test/CMakeFiles/ProjectTests.dir/src/tmp_test.cpp.o | libmain.a /usr/lib/x86_64-linux-gnu/libgtest.a /usr/lib/x86_64-linux-gnu/libgtest_main.a libProject.a /usr/lib/x86_64-linux-gnu/libgtest.a || libProject.a libmain.a
+  FLAGS = -g
+  LINK_LIBRARIES = libmain.a  /usr/lib/x86_64-linux-gnu/libgtest.a  /usr/lib/x86_64-linux-gnu/libgtest_main.a  libProject.a  /usr/lib/x86_64-linux-gnu/libgtest.a  -lpthread
+  OBJECT_DIR = test/CMakeFiles/ProjectTests.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = ../bin/ProjectTests
+  TARGET_PDB = ProjectTests.dbg
 
 # =============================================================================
 # Target aliases.
 
-build Road: phony libRoad.a
+build Demonstration: phony ../bin/Demonstration
 
-build RoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoad: phony ../bin/RoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoad
+build Project: phony libProject.a
 
-build run: phony ../bin/run
+build ProjectTests: phony ../bin/ProjectTests
+
+build main: phony libmain.a
 
 # =============================================================================
 # Folder targets.
@@ -181,7 +364,14 @@ build run: phony ../bin/run
 #############################################
 # Folder: /Project/liweiguo/test/modern-cpp-template/build
 
-build all: phony ../bin/RoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoad ../bin/run libRoad.a
+build all: phony ../bin/Demonstration libmain.a libProject.a test/all
+
+# =============================================================================
+
+#############################################
+# Folder: /Project/liweiguo/test/modern-cpp-template/build/test
+
+build test/all: phony ../bin/ProjectTests
 
 # =============================================================================
 # Built-in targets
@@ -195,14 +385,14 @@ default all
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | ../CMakeLists.txt /usr/share/cmake-3.16/Modules/CMakeCInformation.cmake /usr/share/cmake-3.16/Modules/CMakeCXXInformation.cmake /usr/share/cmake-3.16/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake /usr/share/cmake-3.16/Modules/CMakeCommonLanguageInclude.cmake /usr/share/cmake-3.16/Modules/CMakeGenericSystem.cmake /usr/share/cmake-3.16/Modules/CMakeInitializeConfigs.cmake /usr/share/cmake-3.16/Modules/CMakeLanguageInformation.cmake /usr/share/cmake-3.16/Modules/CMakeSystemSpecificInformation.cmake /usr/share/cmake-3.16/Modules/CMakeSystemSpecificInitialize.cmake /usr/share/cmake-3.16/Modules/Compiler/CMakeCommonCompilerMacros.cmake /usr/share/cmake-3.16/Modules/Compiler/GNU-C.cmake /usr/share/cmake-3.16/Modules/Compiler/GNU-CXX.cmake /usr/share/cmake-3.16/Modules/Compiler/GNU.cmake /usr/share/cmake-3.16/Modules/Internal/CMakeCheckCompilerFlag.cmake /usr/share/cmake-3.16/Modules/Platform/Linux-GNU-C.cmake /usr/share/cmake-3.16/Modules/Platform/Linux-GNU-CXX.cmake /usr/share/cmake-3.16/Modules/Platform/Linux-GNU.cmake /usr/share/cmake-3.16/Modules/Platform/Linux.cmake /usr/share/cmake-3.16/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.16.3/CMakeCCompiler.cmake CMakeFiles/3.16.3/CMakeCXXCompiler.cmake CMakeFiles/3.16.3/CMakeSystem.cmake
+build build.ninja: RERUN_CMAKE | ../CMakeLists.txt ../cmake/CompilerWarnings.cmake ../cmake/Conan.cmake ../cmake/Doxygen.cmake ../cmake/ProjectConfig.cmake.in ../cmake/SourcesAndHeaders.cmake ../cmake/StandardSettings.cmake ../cmake/Utils.cmake ../cmake/Vcpkg.cmake ../cmake/version.hpp.in ../test/CMakeLists.txt /usr/share/cmake-3.16/Modules/BasicConfigVersion-SameMajorVersion.cmake.in /usr/share/cmake-3.16/Modules/CMakeCXXInformation.cmake /usr/share/cmake-3.16/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake /usr/share/cmake-3.16/Modules/CMakeCommonLanguageInclude.cmake /usr/share/cmake-3.16/Modules/CMakeGenericSystem.cmake /usr/share/cmake-3.16/Modules/CMakeInitializeConfigs.cmake /usr/share/cmake-3.16/Modules/CMakeLanguageInformation.cmake /usr/share/cmake-3.16/Modules/CMakePackageConfigHelpers.cmake /usr/share/cmake-3.16/Modules/CMakeSystemSpecificInformation.cmake /usr/share/cmake-3.16/Modules/CMakeSystemSpecificInitialize.cmake /usr/share/cmake-3.16/Modules/CheckCXXSourceCompiles.cmake /usr/share/cmake-3.16/Modules/CheckIncludeFileCXX.cmake /usr/share/cmake-3.16/Modules/CheckLibraryExists.cmake /usr/share/cmake-3.16/Modules/Compiler/CMakeCommonCompilerMacros.cmake /usr/share/cmake-3.16/Modules/Compiler/GNU-CXX.cmake /usr/share/cmake-3.16/Modules/Compiler/GNU.cmake /usr/share/cmake-3.16/Modules/FindGTest.cmake /usr/share/cmake-3.16/Modules/FindPackageHandleStandardArgs.cmake /usr/share/cmake-3.16/Modules/FindPackageMessage.cmake /usr/share/cmake-3.16/Modules/FindThreads.cmake /usr/share/cmake-3.16/Modules/GNUInstallDirs.cmake /usr/share/cmake-3.16/Modules/GoogleTest.cmake /usr/share/cmake-3.16/Modules/Internal/CMakeCheckCompilerFlag.cmake /usr/share/cmake-3.16/Modules/Platform/Linux-GNU-CXX.cmake /usr/share/cmake-3.16/Modules/Platform/Linux-GNU.cmake /usr/share/cmake-3.16/Modules/Platform/Linux.cmake /usr/share/cmake-3.16/Modules/Platform/UnixPaths.cmake /usr/share/cmake-3.16/Modules/WriteBasicConfigVersionFile.cmake CMakeCache.txt CMakeFiles/3.16.3/CMakeCXXCompiler.cmake CMakeFiles/3.16.3/CMakeSystem.cmake
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build ../CMakeLists.txt /usr/share/cmake-3.16/Modules/CMakeCInformation.cmake /usr/share/cmake-3.16/Modules/CMakeCXXInformation.cmake /usr/share/cmake-3.16/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake /usr/share/cmake-3.16/Modules/CMakeCommonLanguageInclude.cmake /usr/share/cmake-3.16/Modules/CMakeGenericSystem.cmake /usr/share/cmake-3.16/Modules/CMakeInitializeConfigs.cmake /usr/share/cmake-3.16/Modules/CMakeLanguageInformation.cmake /usr/share/cmake-3.16/Modules/CMakeSystemSpecificInformation.cmake /usr/share/cmake-3.16/Modules/CMakeSystemSpecificInitialize.cmake /usr/share/cmake-3.16/Modules/Compiler/CMakeCommonCompilerMacros.cmake /usr/share/cmake-3.16/Modules/Compiler/GNU-C.cmake /usr/share/cmake-3.16/Modules/Compiler/GNU-CXX.cmake /usr/share/cmake-3.16/Modules/Compiler/GNU.cmake /usr/share/cmake-3.16/Modules/Internal/CMakeCheckCompilerFlag.cmake /usr/share/cmake-3.16/Modules/Platform/Linux-GNU-C.cmake /usr/share/cmake-3.16/Modules/Platform/Linux-GNU-CXX.cmake /usr/share/cmake-3.16/Modules/Platform/Linux-GNU.cmake /usr/share/cmake-3.16/Modules/Platform/Linux.cmake /usr/share/cmake-3.16/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.16.3/CMakeCCompiler.cmake CMakeFiles/3.16.3/CMakeCXXCompiler.cmake CMakeFiles/3.16.3/CMakeSystem.cmake: phony
+build ../CMakeLists.txt ../cmake/CompilerWarnings.cmake ../cmake/Conan.cmake ../cmake/Doxygen.cmake ../cmake/ProjectConfig.cmake.in ../cmake/SourcesAndHeaders.cmake ../cmake/StandardSettings.cmake ../cmake/Utils.cmake ../cmake/Vcpkg.cmake ../cmake/version.hpp.in ../test/CMakeLists.txt /usr/share/cmake-3.16/Modules/BasicConfigVersion-SameMajorVersion.cmake.in /usr/share/cmake-3.16/Modules/CMakeCXXInformation.cmake /usr/share/cmake-3.16/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake /usr/share/cmake-3.16/Modules/CMakeCommonLanguageInclude.cmake /usr/share/cmake-3.16/Modules/CMakeGenericSystem.cmake /usr/share/cmake-3.16/Modules/CMakeInitializeConfigs.cmake /usr/share/cmake-3.16/Modules/CMakeLanguageInformation.cmake /usr/share/cmake-3.16/Modules/CMakePackageConfigHelpers.cmake /usr/share/cmake-3.16/Modules/CMakeSystemSpecificInformation.cmake /usr/share/cmake-3.16/Modules/CMakeSystemSpecificInitialize.cmake /usr/share/cmake-3.16/Modules/CheckCXXSourceCompiles.cmake /usr/share/cmake-3.16/Modules/CheckIncludeFileCXX.cmake /usr/share/cmake-3.16/Modules/CheckLibraryExists.cmake /usr/share/cmake-3.16/Modules/Compiler/CMakeCommonCompilerMacros.cmake /usr/share/cmake-3.16/Modules/Compiler/GNU-CXX.cmake /usr/share/cmake-3.16/Modules/Compiler/GNU.cmake /usr/share/cmake-3.16/Modules/FindGTest.cmake /usr/share/cmake-3.16/Modules/FindPackageHandleStandardArgs.cmake /usr/share/cmake-3.16/Modules/FindPackageMessage.cmake /usr/share/cmake-3.16/Modules/FindThreads.cmake /usr/share/cmake-3.16/Modules/GNUInstallDirs.cmake /usr/share/cmake-3.16/Modules/GoogleTest.cmake /usr/share/cmake-3.16/Modules/Internal/CMakeCheckCompilerFlag.cmake /usr/share/cmake-3.16/Modules/Platform/Linux-GNU-CXX.cmake /usr/share/cmake-3.16/Modules/Platform/Linux-GNU.cmake /usr/share/cmake-3.16/Modules/Platform/Linux.cmake /usr/share/cmake-3.16/Modules/Platform/UnixPaths.cmake /usr/share/cmake-3.16/Modules/WriteBasicConfigVersionFile.cmake CMakeCache.txt CMakeFiles/3.16.3/CMakeCXXCompiler.cmake CMakeFiles/3.16.3/CMakeSystem.cmake: phony
 
 
 #############################################

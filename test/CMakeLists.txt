@@ -9,12 +9,16 @@ project(
   LANGUAGES CXX
 )
 
+verbose_message("Adding tests under ${CMAKE_PROJECT_NAME}Tests...")
+
+#
+# Set the sources for the unit tests and add the executable(s)
+#
 
 set(test_sources 
   src/tmp_test.cpp
 )
 add_executable(${PROJECT_NAME} ${test_sources})
-
 #
 # Set the compiler standard
 #
@@ -79,3 +83,5 @@ add_test(
   COMMAND
     ${PROJECT_NAME}
 )
+
+verbose_message("Finished adding unit tests for ${CMAKE_PROJECT_NAME}.")
