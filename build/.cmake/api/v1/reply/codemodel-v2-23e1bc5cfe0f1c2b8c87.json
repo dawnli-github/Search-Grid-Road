@@ -1,0 +1,77 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.15"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "RoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoad",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "Road::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Road-Debug-930bb5e80fb73e753c35.json",
+					"name" : "Road",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "RoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoad::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-RoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoad-Debug-a5ee8502083d2edbbc69.json",
+					"name" : "RoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoad",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "run::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-run-Debug-6722157c777a5b93908d.json",
+					"name" : "run",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/Project/liweiguo/test/modern-cpp-template/build",
+		"source" : "/Project/liweiguo/test/modern-cpp-template"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 0
+	}
+}

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Site BuildName="(empty)"
+	BuildStamp="20210625-1251-Experimental"
+	Name="(empty)"
+	Generator="ctest-3.16.3"
+	CompilerName=""
+	CompilerVersion=""
+	OSName="Linux"
+	Hostname="pcl-Super-Server-29"
+	OSRelease="5.4.0-74-generic"
+	OSVersion="#83-Ubuntu SMP Sat May 8 02:35:39 UTC 2021"
+	OSPlatform="x86_64"
+	Is64Bits="1"
+	VendorString="GenuineIntel"
+	VendorID="Intel Corporation"
+	FamilyID="6"
+	ModelID="85"
+	ProcessorCacheSize="22528"
+	NumberOfLogicalCPU="64"
+	NumberOfPhysicalCPU="32"
+	TotalVirtualMemory="2047"
+	TotalPhysicalMemory="64053"
+	LogicalProcessorsPerPhysical="2"
+	ProcessorClockFrequency="1000.03"
+	>
+	<Testing>
+		<StartDateTime>Jun 25 20:51 CST</StartDateTime>
+		<StartTestTime>1624625499</StartTestTime>
+		<TestList>
+			<Test>./test/ProjectTests</Test>
+		</TestList>
+		<Test Status="notrun">
+			<Name>ProjectTests</Name>
+			<Path>./test</Path>
+			<FullName>./test/ProjectTests</FullName>
+			<FullCommandLine></FullCommandLine>
+			<Results>
+				<NamedMeasurement type="numeric/double" name="Processors">
+					<Value>1</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Completion Status">
+					<Value>Unable to find executable</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Command Line">
+					<Value></Value>
+				</NamedMeasurement>
+				<Measurement>
+					<Value>Unable to find executable: /Project/liweiguo/test/modern-cpp-template/bin/ProjectTests</Value>
+				</Measurement>
+			</Results>
+		</Test>
+		<EndDateTime>Jun 25 20:51 CST</EndDateTime>
+		<EndTestTime>1624625499</EndTestTime>
+		<ElapsedMinutes>0</ElapsedMinutes>
+	</Testing>
+</Site>

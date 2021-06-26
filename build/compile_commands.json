@@ -1,0 +1,31 @@
+[
+{
+  "directory": "/Project/liweiguo/test/modern-cpp-template/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-9   -I../include  -g   -o CMakeFiles/RoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoadRoad.dir/test/src/tmp_test.cpp.o -c /Project/liweiguo/test/modern-cpp-template/test/src/tmp_test.cpp",
+  "file": "/Project/liweiguo/test/modern-cpp-template/test/src/tmp_test.cpp"
+},
+
+{
+  "directory": "/Project/liweiguo/test/modern-cpp-template/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-9   -I../include  -g   -o CMakeFiles/run.dir/main.cpp.o -c /Project/liweiguo/test/modern-cpp-template/main.cpp",
+  "file": "/Project/liweiguo/test/modern-cpp-template/main.cpp"
+},
+
+{
+  "directory": "/Project/liweiguo/test/modern-cpp-template/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-9   -I../include  -g   -o CMakeFiles/Road.dir/src/Graph.cpp.o -c /Project/liweiguo/test/modern-cpp-template/src/Graph.cpp",
+  "file": "/Project/liweiguo/test/modern-cpp-template/src/Graph.cpp"
+},
+
+{
+  "directory": "/Project/liweiguo/test/modern-cpp-template/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-9   -I../include  -g   -o CMakeFiles/Road.dir/src/Model.cpp.o -c /Project/liweiguo/test/modern-cpp-template/src/Model.cpp",
+  "file": "/Project/liweiguo/test/modern-cpp-template/src/Model.cpp"
+},
+
+{
+  "directory": "/Project/liweiguo/test/modern-cpp-template/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-9   -I../include  -g   -o CMakeFiles/Road.dir/src/Resolve.cpp.o -c /Project/liweiguo/test/modern-cpp-template/src/Resolve.cpp",
+  "file": "/Project/liweiguo/test/modern-cpp-template/src/Resolve.cpp"
+}
+]
