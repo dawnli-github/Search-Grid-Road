@@ -13,12 +13,6 @@ project(
 #
 # Set project options
 #
-# set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -stdlib=libc++")
-# set(CMAKE_CXX_CLANG_TIDY
-#   clang-tidy;
-#   -checks='-header-filter=.*';)
-# set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/bin)
-# set(EXECUTABLE_OUTPUT_PATH ${PROJECT_BINARY_DIR})
 
 include(cmake/StandardSettings.cmake)
 include(cmake/Utils.cmake)
