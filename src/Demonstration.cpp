@@ -17,8 +17,8 @@
 #include "Graph.cpp"
 
 using namespace std;
-
 using namespace Road;
+
 int main() {
   const int size = 30;
   Resolve test;
