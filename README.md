@@ -72,14 +72,14 @@ Finally, the path length and running time of each model were output, as shown in
 In the grid area of 1000×1000, obstacles were randomly inserted for 1000×1000×(2/3) times (with repetition). 
 Finally, the path length and running time of each model were output, as shown in the figure.
 
-#### Dijkstra Model
+#### A first random test
 
 ![image](picture/rand1.jpg)
 
-#### A* Model
+#### A second random test
 
 ![image](picture/rand2.jpg)
 
-#### Optimized A* Model
+#### A third random test
 
 ![image](picture/rand3.jpg)
