@@ -10,7 +10,6 @@
  */
 #pragma once
 
-#include <functional>
 
 #include "Graph.h"
 #include "Model.h"
@@ -22,8 +21,6 @@ using namespace std;
 namespace Road {
 class Resolve {
  public:
-  Resolve() = default;
-  ~Resolve() = default;
   // Set
   void set_size(const int width, const int height) {
     _graph.init(width, height);
@@ -38,7 +35,7 @@ class Resolve {
   // Work flow///
   void run();
   // Compute Cost
-  double get_cost(vector<GridLocation> path) const {
+  static double get_cost(vector<GridLocation> path) {
     double cost = 0;
     for (long unsigned int i = 0; i < path.size() - 1; ++i) {
       cost +=
@@ -52,11 +49,11 @@ class Resolve {
   GridLocation get_start() const { return _start; }
   GridLocation get_goal() const { return _goal; }
   // Reconstruct path
-  vector<GridLocation> reconstruct_path(
+  static vector<GridLocation> reconstruct_path(
       GridLocation start, GridLocation goal,
       unordered_map<GridLocation, GridLocation> came_from);
   // Draw
-  void draw(const Graph& graph, int field_width, vector<GridLocation>* path);
+  static void draw(const Graph& graph, int field_width, vector<GridLocation>* path);
 
  private:
   GridLocation _start;

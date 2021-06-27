@@ -21,8 +21,6 @@ using namespace std;
 namespace Road {
 class Model {
  public:
-  explicit Model() = default;
-  ~Model() = default;
   // A* algorithm
   template <typename Graph, typename Location>
   static void a_star_search(Graph graph, Location start, Location goal,
@@ -55,11 +53,10 @@ class Model {
   }
 
   // Dijkstra algorithm
-  template <typename Graph,typename Location>
-  static void dijkstra_search(
-      Graph graph, Location start, Location goal,
-      std::unordered_map<Location, Location>& came_from,
-      std::unordered_map<Location, int>& cost_so_far) {
+  template <typename Graph, typename Location>
+  static void dijkstra_search(Graph graph, Location start, Location goal,
+                              std::unordered_map<Location, Location>& came_from,
+                              std::unordered_map<Location, int>& cost_so_far) {
     PriorityQueue<Location, int> frontier;
     frontier.put(start, 0);
 

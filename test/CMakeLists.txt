@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.15)
+cmake_minimum_required(VERSION 3.17)
 
 #
 # Project details
@@ -19,6 +19,7 @@ set(test_sources
   src/tmp_test.cpp
 )
 add_executable(${PROJECT_NAME} ${test_sources})
+
 #
 # Set the compiler standard
 #

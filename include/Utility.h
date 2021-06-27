@@ -18,8 +18,6 @@ using namespace std;
 namespace Road {
 class Heuristic {
  public:
-  explicit Heuristic() = default;
-  ~Heuristic() = default;
   static int manhattan(GridLocation a, GridLocation b) {
     return 5 * (abs(a.x - b.x) + abs(a.y - b.y));
   }

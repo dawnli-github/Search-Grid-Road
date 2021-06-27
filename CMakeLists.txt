@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.15)
+cmake_minimum_required(VERSION 3.17)
 
 #
 # Project details
@@ -13,9 +13,12 @@ project(
 #
 # Set project options
 #
-
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/bin)
-set(EXECUTABLE_OUTPUT_PATH ${PROJECT_BINARY_DIR})
+# set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -stdlib=libc++")
+# set(CMAKE_CXX_CLANG_TIDY
+#   clang-tidy;
+#   -checks='-header-filter=.*';)
+# set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/bin)
+# set(EXECUTABLE_OUTPUT_PATH ${PROJECT_BINARY_DIR})
 
 include(cmake/StandardSettings.cmake)
 include(cmake/Utils.cmake)
@@ -282,16 +285,16 @@ message(STATUS "Finished building requirements for installing the package.\n")
 #
 # Unit testing setup
 #
-include_directories(${PROJECT_SOURCE_DIR}/include)
-set(SRC 
-    ${PROJECT_SOURCE_DIR}/src/Graph.cpp
-    ${PROJECT_SOURCE_DIR}/src/Resolve.cpp
-)
-add_library(main
-    ${SRC}
-)
-link_libraries(main)
-add_executable(Demonstration ${PROJECT_SOURCE_DIR}/src/Demonstration.cpp)
+# include_directories(${PROJECT_SOURCE_DIR}/include)
+# set(SRC 
+#     ${PROJECT_SOURCE_DIR}/src/Graph.cpp
+#     ${PROJECT_SOURCE_DIR}/src/Resolve.cpp
+# )
+# add_library(main
+#     ${SRC}
+# )
+# link_libraries(main)
+# add_executable(Demonstration ${PROJECT_SOURCE_DIR}/src/Demonstration.cpp)
 
 
 if(${PROJECT_NAME}_ENABLE_UNIT_TESTING)
