@@ -40,3 +40,6 @@ cd ../bin/
 
 ./Demonstration
 ```
+
+## 4. Model Compare
+

@@ -20,7 +20,7 @@ using namespace std;
 using namespace Road;
 
 int main() {
-  const int size = 30;
+  const int size = 1000;
   Resolve test;
   test.set_size(size, size);
   vector<GridLocation> walls;
@@ -32,7 +32,7 @@ int main() {
   uniform_int_distribution<int> rand_id(0, size - 1);
   GridLocation start{rand_start(rand_engine), rand_start(rand_engine)};
   GridLocation goal{rand_end(rand_engine), rand_end(rand_engine)};
-  while (count <= size * size / 2) {
+  while (count <= size * size * 2 / 3) {
     GridLocation id{rand_id(rand_engine), rand_id(rand_engine)};
     if (id != start && id != goal) {
       walls.emplace_back(id);
