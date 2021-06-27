@@ -30,7 +30,7 @@ void Resolve::run() {
                                               dj_came_from, dj_cost_so_far);
   vector<GridLocation> dj_path = reconstruct_path(_start, _goal, dj_came_from);
   auto dj_time_end = chrono::system_clock::now();
-  // draw(_graph, 3, &dj_path);
+  draw(_graph, 3, &dj_path);
   cout << endl << "The Model Cost :" << get_cost(dj_path) << endl;
   auto dj_time_duration =
       chrono::duration_cast<chrono::microseconds>(dj_time_end - dj_time_start);
@@ -50,7 +50,7 @@ void Resolve::run() {
       _graph, _start, _goal, Heuristic::manhattan, came_from, cost_so_far);
   vector<GridLocation> path = reconstruct_path(_start, _goal, came_from);
   auto a_star_time_end = chrono::system_clock::now();
-  // draw(_graph, 3, &path);
+  draw(_graph, 3, &path);
   cout << endl << "The Model Cost :" << get_cost(path) << endl;
   auto a_star_time_duration = chrono::duration_cast<chrono::microseconds>(
       a_star_time_end - a_star_time_start);
@@ -73,7 +73,7 @@ void Resolve::run() {
   vector<GridLocation> opt_path =
       reconstruct_path(_start, _goal, opt_came_from);
   auto opt_a_star_time_end = chrono::system_clock::now();
-  // draw(_graph, 3, &opt_path);
+  draw(_graph, 3, &opt_path);
   cout << endl << "The Model Cost :" << get_cost(opt_path) << endl;
   auto opt_a_star_time_duration = chrono::duration_cast<chrono::microseconds>(
       opt_a_star_time_end - opt_a_star_time_start);

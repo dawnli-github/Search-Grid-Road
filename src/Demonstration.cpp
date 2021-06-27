@@ -20,7 +20,7 @@ using namespace std;
 using namespace Road;
 
 int main() {
-  const int size = 1000;
+  const int size = 30;
   Resolve test;
   test.set_size(size, size);
   vector<GridLocation> walls;

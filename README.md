@@ -25,29 +25,61 @@ Optimize performance by using different functions, the configuration of this mod
 
 Among them, the comprehensive distance is the comprehensive consideration of Euclidean distance and Manhattan distance.
 
-## 2. Config
+## 2. Configuration
 
 ```shell
+
 git clone https://github.com/dawnli-github/Search-Grid-Road.git
 
-cd Seach-Grid-Road && mkdir build && cmake .. && make
+cd Seach-Grid-Road
+
+mkdir build && cd build
+
+cmake ..
+
+make
+
 ```
 
 ## 3. Demonstration
 
 ```shell
-cd ../bin/
 
 ./Demonstration
+
 ```
 
-## 4. Model Compare
+## 4. Model Comparison
+### Tiny Size Comparison
 
-In the grid area of 1000×1000, obstacles were randomly inserted for 1000×1000×2/3 times (with repetition). 
+In the grid area of 30×30, obstacles were randomly inserted for 30×30×(2/3) times (with repetition). 
 Finally, the path length and running time of each model were output, as shown in the figure.
+
+#### Dijkstra Model
+
+![image](picture/model1.jpg)
+
+#### A* Model
+
+![image](picture/model2.jpg)
+
+#### Optimized A* Model
+
+![image](picture/model3.jpg)
+
+### Large Size Comparison
+
+In the grid area of 1000×1000, obstacles were randomly inserted for 1000×1000×(2/3) times (with repetition). 
+Finally, the path length and running time of each model were output, as shown in the figure.
+
+#### Dijkstra Model
 
 ![image](picture/rand1.jpg)
 
+#### A* Model
+
 ![image](picture/rand2.jpg)
+
+#### Optimized A* Model
 
 ![image](picture/rand3.jpg)
