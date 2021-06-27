@@ -10,7 +10,6 @@
  */
 #pragma once
 
-
 #include "Graph.h"
 #include "Model.h"
 #include "PriorityQueue.h"
@@ -25,7 +24,7 @@ class Resolve {
   void set_size(const int width, const int height) {
     _graph.init(width, height);
   }
-  void set_walls(const vector<GridLocation> walls) {
+  void set_walls(const vector<GridLocation>& walls) {
     for (auto wall : walls) {
       _graph.set_wall(wall);
     }
@@ -53,7 +52,8 @@ class Resolve {
       GridLocation start, GridLocation goal,
       unordered_map<GridLocation, GridLocation> came_from);
   // Draw
-  static void draw(const Graph& graph, int field_width, vector<GridLocation>* path);
+  static void draw(const Graph& graph, int field_width,
+                   vector<GridLocation>* path);
 
  private:
   GridLocation _start;

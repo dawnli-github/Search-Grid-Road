@@ -12,7 +12,9 @@
 #include <ctime>
 #include <random>
 
+#include "../include/Graph.h"
 #include "../include/Resolve.h"
+#include "Graph.cpp"
 
 using namespace std;
 
@@ -26,11 +28,11 @@ int main() {
   int count = 0;
   random_device rand_engine;
   uniform_int_distribution<int> rand_start(0, size / 4);
-  uniform_int_distribution<int> rand_end(3 * size / 4, size);
-  uniform_int_distribution<int> rand_id(0, size);
+  uniform_int_distribution<int> rand_end(3 * size / 4, size - 1);
+  uniform_int_distribution<int> rand_id(0, size - 1);
   GridLocation start{rand_start(rand_engine), rand_start(rand_engine)};
   GridLocation goal{rand_end(rand_engine), rand_end(rand_engine)};
-  while (count <= size * size / 2) {
+  while (count <= size * size) {
     GridLocation id{rand_id(rand_engine), rand_id(rand_engine)};
     if (id != start && id != goal) {
       walls.emplace_back(id);

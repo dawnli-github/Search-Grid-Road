@@ -6,15 +6,15 @@
 using namespace Road;
 
 TEST(AStarHeuristicTest, CheckManhatten) {
-  Road::GridLocation x{1, 4};
-  Road::GridLocation y{2, 6};
+  GridLocation x{1, 4};
+  GridLocation y{2, 6};
   ASSERT_EQ(Heuristic::manhattan(x, y), 15);
   EXPECT_TRUE(true);
 }
 
 TEST(AStarHeuristicTest, CheckOptManhatten) {
-  Road::GridLocation x{2, 7};
-  Road::GridLocation y{4, 10};
+  GridLocation x{2, 7};
+  GridLocation y{4, 10};
   ASSERT_EQ(Heuristic::optManhattan(x, y), 19);
   EXPECT_TRUE(true);
 }

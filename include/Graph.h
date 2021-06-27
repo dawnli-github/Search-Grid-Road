@@ -28,8 +28,8 @@ struct GridLocation {
 bool operator==(GridLocation a, GridLocation b);
 bool operator!=(GridLocation a, GridLocation b);
 bool operator<(GridLocation a, GridLocation b);
-std::basic_iostream<char>::basic_ostream& operator<<(
-    std::basic_iostream<char>::basic_ostream& out, const GridLocation& loc);
+basic_iostream<char>::basic_ostream& operator<<(
+    basic_iostream<char>::basic_ostream& out, const GridLocation& loc);
 }  // namespace Road
 
 namespace std {
@@ -39,9 +39,8 @@ struct hash<Road::GridLocation> {
   using argument_type = Road::GridLocation;
   using result_type = size_t;
   size_t operator()(const Road::GridLocation& id) const noexcept {
-    return hash<unsigned int>()(
-        static_cast<unsigned int>(id.x) ^
-        (static_cast<unsigned int>(id.y) << static_cast<unsigned int>(4)));
+    return hash<unsigned int>()(static_cast<unsigned int>(id.x) ^
+                                (static_cast<unsigned int>(id.y) << 4U));
   }
 };
 }  // namespace std

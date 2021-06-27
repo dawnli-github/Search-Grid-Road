@@ -285,16 +285,16 @@ message(STATUS "Finished building requirements for installing the package.\n")
 #
 # Unit testing setup
 #
-# include_directories(${PROJECT_SOURCE_DIR}/include)
-# set(SRC 
-#     ${PROJECT_SOURCE_DIR}/src/Graph.cpp
-#     ${PROJECT_SOURCE_DIR}/src/Resolve.cpp
-# )
-# add_library(main
-#     ${SRC}
-# )
-# link_libraries(main)
-# add_executable(Demonstration ${PROJECT_SOURCE_DIR}/src/Demonstration.cpp)
+include_directories(${PROJECT_SOURCE_DIR}/include)
+set(SRC 
+    ${PROJECT_SOURCE_DIR}/src/Graph.cpp
+    ${PROJECT_SOURCE_DIR}/src/Resolve.cpp
+)
+add_library(main
+    ${SRC}
+)
+link_libraries(main)
+add_executable(Demonstration ${PROJECT_SOURCE_DIR}/src/Demonstration.cpp)
 
 
 if(${PROJECT_NAME}_ENABLE_UNIT_TESTING)

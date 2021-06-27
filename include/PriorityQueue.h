@@ -19,8 +19,7 @@ using namespace std;
 namespace Road {
 template <typename T, typename priority_t>
 struct PriorityQueue {
-  typedef pair<priority_t, T> priority_element;
-  priority_queue<priority_element, vector<priority_element>, greater<priority_element>> elements;
+  using priority_element = pair<priority_t, T>;
 
   inline bool empty() const { return elements.empty(); }
 
@@ -33,5 +32,9 @@ struct PriorityQueue {
     elements.pop();
     return best_item;
   }
+  private:
+   priority_queue<priority_element, vector<priority_element>,
+                  greater<priority_element>>
+       elements;
 };
 }  // namespace Road

@@ -19,12 +19,17 @@ namespace Road {
 class Heuristic {
  public:
   static int manhattan(GridLocation a, GridLocation b) {
-    return 5 * (abs(a.x - b.x) + abs(a.y - b.y));
+    return LINEAR_UNIT * (abs(a.x - b.x) + abs(a.y - b.y));
   }
   static int optManhattan(GridLocation a, GridLocation b) {
     int dx = abs(a.x - b.x);
     int dy = abs(a.y - b.y);
-    return 5 * max(dx, dy) + 2 * min(dx, dy);
+    return LINEAR_UNIT * max(dx, dy) +
+           (OBLIQQUE_UNIT - LINEAR_UNIT) * min(dx, dy);
   }
+
+ private:
+  static constexpr int LINEAR_UNIT = 5;
+  static constexpr int OBLIQQUE_UNIT = 7;
 };
 }  // namespace Road
