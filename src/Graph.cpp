@@ -12,19 +12,5 @@
 
 namespace Road {
 
-bool operator==(GridLocation a, GridLocation b) {
-  return a.x == b.x && a.y == b.y;
-}
 
-bool operator!=(GridLocation a, GridLocation b) { return !(a == b); }
-
-bool operator<(GridLocation a, GridLocation b) {
-  return tie(a.x, a.y) < tie(b.x, b.y);
-}
-
-basic_iostream<char>::basic_ostream& operator<<(
-    basic_iostream<char>::basic_ostream& out, const GridLocation& loc) {
-  out << '(' << loc.x << ',' << loc.y << ')';
-  return out;
-}
 }  // namespace Road

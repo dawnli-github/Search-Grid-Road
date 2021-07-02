@@ -25,11 +25,7 @@ struct GridLocation {
   int x = 0;
   int y = 0;
 };
-bool operator==(GridLocation a, GridLocation b);
-bool operator!=(GridLocation a, GridLocation b);
-bool operator<(GridLocation a, GridLocation b);
-basic_iostream<char>::basic_ostream& operator<<(
-    basic_iostream<char>::basic_ostream& out, const GridLocation& loc);
+
 }  // namespace Road
 
 namespace std {
@@ -98,4 +94,20 @@ class Graph {
   const vector<pair<int, int>> _move_type = {
       {1, 0}, {0, -1}, {-1, 0}, {0, 1}, {1, 1}, {1, -1}, {-1, 1}, {-1, -1}};
 };
+
+inline bool operator==(GridLocation a, GridLocation b) {
+  return a.x == b.x && a.y == b.y;
+}
+
+inline bool operator!=(GridLocation a, GridLocation b) { return !(a == b); }
+
+inline bool operator<(GridLocation a, GridLocation b) {
+  return tie(a.x, a.y) < tie(b.x, b.y);
+}
+
+inline basic_iostream<char>::basic_ostream& operator<<(
+    basic_iostream<char>::basic_ostream& out, const GridLocation& loc) {
+  out << '(' << loc.x << ',' << loc.y << ')';
+  return out;
+}
 }  // namespace Road

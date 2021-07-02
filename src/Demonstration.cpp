@@ -14,7 +14,7 @@
 
 #include "../include/Graph.h"
 #include "../include/Resolve.h"
-#include "Graph.cpp"
+
 
 using namespace std;
 using namespace Road;
