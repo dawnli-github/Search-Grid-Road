@@ -281,7 +281,6 @@ message(STATUS "Finished building requirements for installing the package.\n")
 #
 include_directories(${PROJECT_SOURCE_DIR}/include)
 set(SRC 
-    ${PROJECT_SOURCE_DIR}/src/Graph.cpp
     ${PROJECT_SOURCE_DIR}/src/Resolve.cpp
 )
 add_library(main

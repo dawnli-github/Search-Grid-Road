@@ -1,5 +1,4 @@
 set(sources
-    src/Graph.cpp
     src/Resolve.cpp
 )
 

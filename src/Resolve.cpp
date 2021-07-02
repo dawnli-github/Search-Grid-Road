@@ -9,7 +9,7 @@
  *
  */
 
-#include "../include/Resolve.h"
+#include "Resolve.h"
 
 #include <algorithm>
 #include <chrono>

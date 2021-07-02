@@ -35,6 +35,6 @@ struct PriorityQueue {
   private:
    priority_queue<priority_element, vector<priority_element>,
                   greater<priority_element>>
-       elements;
+       elements; 
 };
 }  // namespace road

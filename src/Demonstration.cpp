@@ -12,8 +12,8 @@
 #include <ctime>
 #include <random>
 
-#include "../include/Graph.h"
-#include "../include/Resolve.h"
+#include "Graph.h"
+#include "Resolve.h"
 
 
 using namespace std;
