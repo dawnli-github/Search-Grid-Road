@@ -3,7 +3,7 @@
 #include "../../include/Resolve.h"
 #include "../../include/Utility.h"
 
-using namespace Road;
+using namespace road;
 
 TEST(AStarHeuristicTest, CheckManhatten) {
   GridLocation x{1, 4};

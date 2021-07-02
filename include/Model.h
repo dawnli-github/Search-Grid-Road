@@ -18,7 +18,7 @@
 
 using namespace std;
 
-namespace Road {
+namespace road {
 class Model {
  public:
   // A* algorithm
@@ -84,4 +84,4 @@ class Model {
 
  private:
 };
-}  // namespace Road
+}  // namespace road

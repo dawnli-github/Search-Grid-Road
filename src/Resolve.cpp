@@ -18,7 +18,7 @@
 
 using namespace std;
 
-namespace Road {
+namespace road {
 
 void Resolve::run() {
   // Build Dijkstra model
@@ -128,4 +128,4 @@ void Resolve::draw(const Graph& graph, int field_width,
     cout << '\n';
   }
 }
-}  // namespace Road
+}  // namespace road

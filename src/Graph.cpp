@@ -10,7 +10,7 @@
  */
 #include "../include/Graph.h"
 
-namespace Road {
+namespace road {
 
 
-}  // namespace Road
+}  // namespace road

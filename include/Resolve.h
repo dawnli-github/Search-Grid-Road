@@ -17,7 +17,7 @@
 
 using namespace std;
 
-namespace Road {
+namespace road {
 class Resolve {
  public:
   // Set
@@ -60,4 +60,4 @@ class Resolve {
   GridLocation _goal;
   Graph _graph;
 };
-}  // namespace Road
+}  // namespace road

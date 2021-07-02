@@ -16,7 +16,7 @@
 
 using namespace std;
 
-namespace Road {
+namespace road {
 template <typename T, typename priority_t>
 struct PriorityQueue {
   using priority_element = pair<priority_t, T>;
@@ -37,4 +37,4 @@ struct PriorityQueue {
                   greater<priority_element>>
        elements;
 };
-}  // namespace Road
+}  // namespace road

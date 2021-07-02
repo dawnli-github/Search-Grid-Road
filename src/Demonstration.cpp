@@ -17,7 +17,7 @@
 
 
 using namespace std;
-using namespace Road;
+using namespace road;
 
 int main() {
   const int size = 30;

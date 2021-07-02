@@ -19,29 +19,29 @@
 
 using namespace std;
 
-namespace Road {
+namespace road {
 
 struct GridLocation {
   int x = 0;
   int y = 0;
 };
 
-}  // namespace Road
+}  // namespace road
 
 namespace std {
 /* implement hash function so we can put GridLocation into an unordered_set */
 template <>
-struct hash<Road::GridLocation> {
-  using argument_type = Road::GridLocation;
+struct hash<road::GridLocation> {
+  using argument_type = road::GridLocation;
   using result_type = size_t;
-  size_t operator()(const Road::GridLocation& id) const noexcept {
+  size_t operator()(const road::GridLocation& id) const noexcept {
     return hash<unsigned int>()(static_cast<unsigned int>(id.x) ^
                                 (static_cast<unsigned int>(id.y) << 4U));
   }
 };
 }  // namespace std
 
-namespace Road {
+namespace road {
 class Graph {
  public:
   // Init
@@ -110,4 +110,4 @@ inline basic_iostream<char>::basic_ostream& operator<<(
   out << '(' << loc.x << ',' << loc.y << ')';
   return out;
 }
-}  // namespace Road
+}  // namespace road

@@ -15,7 +15,7 @@
 
 using namespace std;
 
-namespace Road {
+namespace road {
 class Heuristic {
  public:
   static int manhattan(GridLocation a, GridLocation b) {
@@ -32,4 +32,4 @@ class Heuristic {
   static constexpr int LINEAR_UNIT = 5;
   static constexpr int OBLIQQUE_UNIT = 7;
 };
-}  // namespace Road
+}  // namespace road
