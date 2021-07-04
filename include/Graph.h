@@ -71,8 +71,8 @@ class Graph {
   // Function
   static int cost(GridLocation current, GridLocation next) {
     return abs(next.x - current.x) + abs(next.y - current.y) == 2
-               ? OBLIQQUE_UNIT
-               : LINEAR_UNIT;
+               ? kObliqueUnit
+               : kLinearUnit;
   };
 
  private:
@@ -86,8 +86,8 @@ class Graph {
   // The ratio of unit distance of the diagonal to unit distance of the straight
   // line is 1.414 : 1 ≈ 1.4 : 1 = 7 ： 5, so we use the approximate proportion
   // of integral type to speed up the operation
-  static constexpr int LINEAR_UNIT = 5;
-  static constexpr int OBLIQQUE_UNIT = 7;
+  static constexpr int kLinearUnit = 5;
+  static constexpr int kObliqueUnit = 7;
   int _width = 0;
   int _height = 0;
   unordered_set<GridLocation> _walls;
