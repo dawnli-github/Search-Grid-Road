@@ -32,7 +32,7 @@ class Resolve {
   void set_start(const GridLocation start) { _start = start; }
   void set_goal(const GridLocation goal) { _goal = goal; }
   // Work flow///
-  void run();
+  void run(string model_name, string heuristic_name);
   // Compute Cost
   static double get_cost(vector<GridLocation> path) {
     double cost = 0;

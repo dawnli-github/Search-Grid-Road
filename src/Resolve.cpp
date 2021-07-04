@@ -20,85 +20,19 @@ using namespace std;
 
 namespace road {
 
-void Resolve::run() {
-  // Build Dijkstra model
-  cout << endl << "Dijkstra Model Flow" << endl << endl;
-  auto dj_time_start = chrono::system_clock::now();
-  unordered_map<GridLocation, GridLocation> dj_came_from;
-  unordered_map<GridLocation, int> dj_cost_so_far;
-  Model::dijkstra_search<Graph, GridLocation>(_graph, _start, _goal,
-                                              dj_came_from, dj_cost_so_far);
-  vector<GridLocation> dj_path = reconstruct_path(_start, _goal, dj_came_from);
-  auto dj_time_end = chrono::system_clock::now();
-  draw(_graph, &dj_path);
-  cout << endl << "The Model Cost :" << get_cost(dj_path) << endl;
-  auto dj_time_duration =
-      chrono::duration_cast<chrono::microseconds>(dj_time_end - dj_time_start);
-  cout << endl
-       << "The Model Running Time :"
-       << double(dj_time_duration.count()) * chrono::microseconds::period::num /
-              chrono::microseconds::period::den
-       << "s" << endl;
-  cout << endl
-       << "----------------------------------------------------" << endl;
-  // Build A* model
-  cout << endl << "A* Model Flow" << endl << endl;
-  auto a_star_time_start = chrono::system_clock::now();
-  unordered_map<GridLocation, GridLocation> came_from;
-  unordered_map<GridLocation, int> cost_so_far;
-  Model::a_star_search<Graph, GridLocation>(
-      _graph, _start, _goal, Heuristic::manhattan, came_from, cost_so_far);
-  vector<GridLocation> path = reconstruct_path(_start, _goal, came_from);
-  auto a_star_time_end = chrono::system_clock::now();
+void Resolve::run(string model_name, string heuristic_name) {
+  auto* factory = new Factory<Graph, GridLocation>(_graph, _start, _goal);
+  auto* model = factory->setModel(model_name, heuristic_name);
+  cout << endl << "The Heuristic Type : " << heuristic_name << endl << endl;
+  vector<GridLocation> path = model->get_path();
   draw(_graph, &path);
   cout << endl << "The Model Cost :" << get_cost(path) << endl;
-  auto a_star_time_duration = chrono::duration_cast<chrono::microseconds>(
-      a_star_time_end - a_star_time_start);
   cout << endl
-       << "The Model Running Time :"
-       << double(a_star_time_duration.count()) *
-              chrono::microseconds::period::num /
-              chrono::microseconds::period::den
-       << "s" << endl;
+       << "The Model Running Time :" << model->get_run_time() << "s" << endl;
   cout << endl
        << "----------------------------------------------------" << endl;
-  // Build A* opt model
-  cout << endl << "A* Optimized Model Flow" << endl << endl;
-  auto opt_a_star_time_start = chrono::system_clock::now();
-  unordered_map<GridLocation, GridLocation> opt_came_from;
-  unordered_map<GridLocation, int> opt_cost_so_far;
-  Model::a_star_search<Graph, GridLocation>(_graph, _start, _goal,
-                                            Heuristic::optManhattan,
-                                            opt_came_from, opt_cost_so_far);
-  vector<GridLocation> opt_path =
-      reconstruct_path(_start, _goal, opt_came_from);
-  auto opt_a_star_time_end = chrono::system_clock::now();
-  draw(_graph, &opt_path);
-  cout << endl << "The Model Cost :" << get_cost(opt_path) << endl;
-  auto opt_a_star_time_duration = chrono::duration_cast<chrono::microseconds>(
-      opt_a_star_time_end - opt_a_star_time_start);
-  cout << endl
-       << "The Model Running Time :"
-       << double(opt_a_star_time_duration.count()) *
-              chrono::microseconds::period::num /
-              chrono::microseconds::period::den
-       << "s" << endl;
-  cout << endl
-       << "----------------------------------------------------" << endl;
-}
-
-vector<GridLocation> Resolve::reconstruct_path(
-    GridLocation start, GridLocation goal,
-    unordered_map<GridLocation, GridLocation> came_from) {
-  vector<GridLocation> path;
-  GridLocation current = goal;
-  while (current != start) {
-    path.push_back(current);
-    current = came_from[current];
-  }
-  path.push_back(start);  // optional
-  reverse(path.begin(), path.end());
-  return path;
+  delete factory;
+  delete model;
 }
 
 void Resolve::draw(const Graph& graph, vector<GridLocation>* path) {
