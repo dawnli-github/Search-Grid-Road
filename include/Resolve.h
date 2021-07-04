@@ -52,8 +52,7 @@ class Resolve {
       GridLocation start, GridLocation goal,
       unordered_map<GridLocation, GridLocation> came_from);
   // Draw
-  static void draw(const Graph& graph, int field_width,
-                   vector<GridLocation>* path);
+  static void draw(const Graph& graph, vector<GridLocation>* path);
 
  private:
   GridLocation _start;
