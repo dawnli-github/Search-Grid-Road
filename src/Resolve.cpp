@@ -21,8 +21,9 @@ using namespace std;
 namespace road {
 
 void Resolve::run(string model_name, string heuristic_name) {
-  auto* factory = new Factory<Graph, GridLocation>(_graph, _start, _goal);
-  auto* model = factory->setModel(model_name, heuristic_name);
+  unique_ptr<Factory<Graph, GridLocation>> factory =
+      make_unique<Factory<Graph, GridLocation>>(_graph, _start, _goal);
+  auto model = factory->setModel(model_name, heuristic_name);
   cout << endl << "The Heuristic Type : " << heuristic_name << endl << endl;
   vector<GridLocation> path = model->get_path();
   draw(_graph, &path);
@@ -31,8 +32,6 @@ void Resolve::run(string model_name, string heuristic_name) {
        << "The Model Running Time :" << model->get_run_time() << "s" << endl;
   cout << endl
        << "----------------------------------------------------" << endl;
-  delete model;
-  delete factory;
 }
 
 void Resolve::draw(const Graph& graph, vector<GridLocation>* path) {

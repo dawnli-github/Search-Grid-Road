@@ -176,17 +176,18 @@ class Factory {
       : _graph(graph), _start(start), _goal(goal) {
     cout << "Factory is running" << endl << endl;
   }
-  AbstractModel<Location>* setModel(string& model_name,
-                                    string& heuristic_name) {
-    AbstractModel<Location>* model = nullptr;
+  unique_ptr<AbstractModel<Location>> setModel(string& model_name,
+                                                    string& heuristic_name) {
+    unique_ptr<AbstractModel<Location>> model = nullptr;
     if (model_name == "A*" && heuristic_name == "manhattan") {
-      model = new AStarModel<Graph, Location>(_graph, _start, _goal,
-                                              Heuristic::manhattan);
+      model = make_unique<AStarModel<Graph, Location>>(
+          _graph, _start, _goal, Heuristic::manhattan);
     } else if (model_name == "A*" && heuristic_name == "optManhattan") {
-      model = new AStarModel<Graph, Location>(_graph, _start, _goal,
-                                              Heuristic::optManhattan);
+      model = make_unique<AStarModel<Graph, Location>>(
+          _graph, _start, _goal, Heuristic::optManhattan);
     } else if (model_name == "Dijkstra") {
-      model = new DijkstraModel<Graph, Location>(_graph, _start, _goal);
+      model = make_unique<DijkstraModel<Graph, Location>>(_graph, _start,
+                                                               _goal);
     }
     return model;
   }
