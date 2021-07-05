@@ -24,7 +24,6 @@ int main() {
   Resolve test;
   test.set_size(size, size);
   vector<GridLocation> walls;
-  int count = 0;
   random_device rand_engine;
   uniform_int_distribution<int> rand_start(0, size / 4);
   uniform_int_distribution<int> rand_end(3 * size / 4, size - 1);
