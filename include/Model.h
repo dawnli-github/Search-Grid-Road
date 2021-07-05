@@ -60,10 +60,8 @@ class AStarModel : public AbstractModel<Location> {
     unordered_map<Location, double> cost_so_far;
     came_from[_start] = _start;
     cost_so_far[_start] = 0;
-
     while (!frontier.empty()) {
       Location current = frontier.get();
-
       if (current == _goal) {
         break;
       }
@@ -124,10 +122,8 @@ class DijkstraModel : public AbstractModel<Location> {
     unordered_map<Location, double> cost_so_far;
     came_from[_start] = _start;
     cost_so_far[_start] = 0;
-
     while (!frontier.empty()) {
       Location current = frontier.get();
-
       if (current == _goal) {
         break;
       }
@@ -177,17 +173,17 @@ class Factory {
     cout << "Factory is running" << endl << endl;
   }
   unique_ptr<AbstractModel<Location>> setModel(string& model_name,
-                                                    string& heuristic_name) {
+                                               string& heuristic_name) {
     unique_ptr<AbstractModel<Location>> model = nullptr;
     if (model_name == "A*" && heuristic_name == "manhattan") {
-      model = make_unique<AStarModel<Graph, Location>>(
-          _graph, _start, _goal, Heuristic::manhattan);
+      model = make_unique<AStarModel<Graph, Location>>(_graph, _start, _goal,
+                                                       Heuristic::manhattan);
     } else if (model_name == "A*" && heuristic_name == "optManhattan") {
-      model = make_unique<AStarModel<Graph, Location>>(
-          _graph, _start, _goal, Heuristic::optManhattan);
+      model = make_unique<AStarModel<Graph, Location>>(_graph, _start, _goal,
+                                                       Heuristic::optManhattan);
     } else if (model_name == "Dijkstra") {
-      model = make_unique<DijkstraModel<Graph, Location>>(_graph, _start,
-                                                               _goal);
+      model =
+          make_unique<DijkstraModel<Graph, Location>>(_graph, _start, _goal);
     }
     return model;
   }

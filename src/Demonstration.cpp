@@ -20,7 +20,7 @@ using namespace road;
 
 int main() {
   // Random init
-  const int size = 30;
+  const int size = 3000;
   Resolve test;
   test.set_size(size, size);
   vector<GridLocation> walls;
@@ -40,7 +40,7 @@ int main() {
   test.set_walls(walls);
   test.set_start(start);
   test.set_goal(goal);
-  test.run("Dijkstra", "null");
-  test.run("A*", "manhattan");
+  // test.run("Dijkstra", "null");
+  // test.run("A*", "manhattan");
   test.run("A*", "optManhattan");
 }

@@ -66,9 +66,6 @@ class Graph {
         neighbors.emplace_back(id);
       }
     }
-    if ((current.x + current.y) % 2 == 0) {
-      reverse(neighbors.begin(), neighbors.end());
-    }
     return neighbors;
   };
   // Function
