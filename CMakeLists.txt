@@ -279,6 +279,7 @@ message(STATUS "Finished building requirements for installing the package.\n")
 #
 # Unit testing setup
 #
+
 include_directories(${PROJECT_SOURCE_DIR}/include)
 set(SRC 
     ${PROJECT_SOURCE_DIR}/src/Resolve.cpp
