@@ -45,7 +45,7 @@ template <typename Graph, typename Location>
 class AStarModel : public AbstractModel<Location> {
  public:
   AStarModel(Graph graph, Location start, Location goal,
-             function<int(Location a, Location b)> heuristic)
+             function<double(Location a, Location b)> heuristic)
       : _graph(graph), _start(start), _goal(goal), _heuristic(heuristic) {
     printModelName();
     run();
@@ -54,10 +54,10 @@ class AStarModel : public AbstractModel<Location> {
   // A* algorithm
   void run() final {
     auto time_start = chrono::system_clock::now();
-    PriorityQueue<Location, int> frontier;
+    PriorityQueue<Location, double> frontier;
     frontier.put(_start, 0);
     unordered_map<Location, Location> came_from;
-    unordered_map<Location, int> cost_so_far;
+    unordered_map<Location, double> cost_so_far;
     came_from[_start] = _start;
     cost_so_far[_start] = 0;
 
@@ -68,11 +68,11 @@ class AStarModel : public AbstractModel<Location> {
         break;
       }
       for (Location next : _graph.get_neighbors(current)) {
-        int new_cost = cost_so_far[current] + _graph.cost(current, next);
+        double new_cost = cost_so_far[current] + _graph.cost(current, next);
         if (cost_so_far.find(next) == cost_so_far.end() ||
             new_cost < cost_so_far[next]) {
           cost_so_far[next] = new_cost;
-          int priority = new_cost + _heuristic(next, _goal);
+          double priority = new_cost + _heuristic(next, _goal);
           frontier.put(next, priority);
           came_from[next] = current;
         }
@@ -101,7 +101,7 @@ class AStarModel : public AbstractModel<Location> {
   Graph _graph;
   Location _start;
   Location _goal;
-  function<int(Location a, Location b)> _heuristic;
+  function<double(Location a, Location b)> _heuristic;
   vector<Location> _path;
   double _run_time = 0;
 };
@@ -118,10 +118,10 @@ class DijkstraModel : public AbstractModel<Location> {
   // Dijkstra algorithm
   void run() {
     auto time_start = chrono::system_clock::now();
-    PriorityQueue<Location, int> frontier;
+    PriorityQueue<Location, double> frontier;
     frontier.put(_start, 0);
     unordered_map<Location, Location> came_from;
-    unordered_map<Location, int> cost_so_far;
+    unordered_map<Location, double> cost_so_far;
     came_from[_start] = _start;
     cost_so_far[_start] = 0;
 
@@ -132,11 +132,11 @@ class DijkstraModel : public AbstractModel<Location> {
         break;
       }
       for (Location next : _graph.get_neighbors(current)) {
-        int new_cost = cost_so_far[current] + _graph.cost(current, next);
+        double new_cost = cost_so_far[current] + _graph.cost(current, next);
         if (cost_so_far.find(next) == cost_so_far.end() ||
             new_cost < cost_so_far[next]) {
           cost_so_far[next] = new_cost;
-          int priority = new_cost;
+          double priority = new_cost;
           frontier.put(next, priority);
           came_from[next] = current;
         }

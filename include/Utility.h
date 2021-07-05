@@ -18,13 +18,13 @@ using namespace std;
 namespace road {
 class Heuristic {
  public:
-  static int manhattan(GridLocation a, GridLocation b) {
-    return kLinearUnit * (abs(a.x - b.x) + abs(a.y - b.y));
+  static double manhattan(GridLocation a, GridLocation b) {
+    return (abs(a.x - b.x) + abs(a.y - b.y));
   }
-  static int optManhattan(GridLocation a, GridLocation b) {
+  static double optManhattan(GridLocation a, GridLocation b) {
     int dx = abs(a.x - b.x);
     int dy = abs(a.y - b.y);
-    return 3 * max(dx, dy) + (kObliqueUnit - kLinearUnit) * (dx + dy);
+    return (2 - sqrt(2)) * max(dx, dy) + (sqrt(2) - 1) * (dx + dy);
   }
 
  private:

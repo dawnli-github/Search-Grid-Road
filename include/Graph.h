@@ -19,11 +19,6 @@
 
 using namespace std;
 
-// The ratio of unit distance of the diagonal to unit distance of the straight
-// line is 1.414 : 1 ≈ 1.4 : 1 = 7 ： 5, so we use the approximate proportion
-// of integral type to speed up the operation
-static constexpr int kLinearUnit = 5;
-static constexpr int kObliqueUnit = 7;
 static constexpr unsigned int kHashX = 4U;
 static constexpr unsigned int kHashY = 16U;
 
@@ -77,9 +72,9 @@ class Graph {
     return neighbors;
   };
   // Function
-  static int cost(GridLocation current, GridLocation next) {
-    return (next.x - current.x) * (next.y - current.y) == 0 ? kLinearUnit
-                                                            : kObliqueUnit;
+  static double cost(GridLocation current, GridLocation next) {
+    return (next.x - current.x) * (next.y - current.y) == 0 ? 1.0
+                                                            : sqrt(2);
   };
 
  private:
@@ -90,13 +85,6 @@ class Graph {
   bool passable(GridLocation id) const {
     return _walls.find(id) == _walls.end();
   }
-  // // The ratio of unit distance of the diagonal to unit distance of the
-  // straight
-  // // line is 1.414 : 1 ≈ 1.4 : 1 = 7 ： 5, so we use the approximate
-  // proportion
-  // // of integral type to speed up the operation
-  // static constexpr int kLinearUnit = 5;
-  // static constexpr int kObliqueUnit = 7;
   int _width = 0;
   int _height = 0;
   unordered_set<GridLocation> _walls;
