@@ -33,7 +33,7 @@ struct PriorityQueue {
     return best_item;
   }
   private:
-   priority_queue<priority_element, vector<priority_element>,
+   priority_queue<priority_element, deque<priority_element>,
                   greater<priority_element>>
        elements; 
 };
