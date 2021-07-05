@@ -19,24 +19,32 @@
 
 using namespace std;
 
-namespace road {
+// The ratio of unit distance of the diagonal to unit distance of the straight
+// line is 1.414 : 1 ≈ 1.4 : 1 = 7 ： 5, so we use the approximate proportion
+// of integral type to speed up the operation
+static constexpr int kLinearUnit = 5;
+static constexpr int kObliqueUnit = 7;
+static constexpr unsigned int kHashX = 4U;
+static constexpr unsigned int kHashY = 16U;
 
+namespace road {
 struct GridLocation {
   int x = 0;
   int y = 0;
-};
+  };
 
 }  // namespace road
 
 namespace std {
+
 /* implement hash function so we can put GridLocation into an unordered_set */
 template <>
 struct hash<road::GridLocation> {
   using argument_type = road::GridLocation;
   using result_type = size_t;
   size_t operator()(const road::GridLocation& id) const noexcept {
-    return hash<unsigned int>()(static_cast<unsigned int>(id.x) ^
-                                (static_cast<unsigned int>(id.y) << 4U));
+    return hash<unsigned int>()((static_cast<unsigned int>(id.x) << kHashX) ^
+                                (static_cast<unsigned int>(id.y) << kHashY));
   }
 };
 }  // namespace std
@@ -70,9 +78,8 @@ class Graph {
   };
   // Function
   static int cost(GridLocation current, GridLocation next) {
-    return abs(next.x - current.x) + abs(next.y - current.y) == 2
-               ? kObliqueUnit
-               : kLinearUnit;
+    return abs(next.x - current.x) + abs(next.y - current.y) == 2 ? kObliqueUnit
+                                                                  : kLinearUnit;
   };
 
  private:
@@ -83,11 +90,11 @@ class Graph {
   bool passable(GridLocation id) const {
     return _walls.find(id) == _walls.end();
   }
-  // The ratio of unit distance of the diagonal to unit distance of the straight
-  // line is 1.414 : 1 ≈ 1.4 : 1 = 7 ： 5, so we use the approximate proportion
-  // of integral type to speed up the operation
-  static constexpr int kLinearUnit = 5;
-  static constexpr int kObliqueUnit = 7;
+  // // The ratio of unit distance of the diagonal to unit distance of the straight
+  // // line is 1.414 : 1 ≈ 1.4 : 1 = 7 ： 5, so we use the approximate proportion
+  // // of integral type to speed up the operation
+  // static constexpr int kLinearUnit = 5;
+  // static constexpr int kObliqueUnit = 7;
   int _width = 0;
   int _height = 0;
   unordered_set<GridLocation> _walls;

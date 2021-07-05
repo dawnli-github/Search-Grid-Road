@@ -31,8 +31,8 @@ void Resolve::run(string model_name, string heuristic_name) {
        << "The Model Running Time :" << model->get_run_time() << "s" << endl;
   cout << endl
        << "----------------------------------------------------" << endl;
-//   delete factory;
-//   delete model;
+  delete factory;
+  delete model;
 }
 
 void Resolve::draw(const Graph& graph, vector<GridLocation>* path) {

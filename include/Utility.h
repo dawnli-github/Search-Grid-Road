@@ -24,12 +24,9 @@ class Heuristic {
   static int optManhattan(GridLocation a, GridLocation b) {
     int dx = abs(a.x - b.x);
     int dy = abs(a.y - b.y);
-    return kLinearUnit * max(dx, dy) +
-           (kObliqueUnit - kLinearUnit) * min(dx, dy);
+    return 3 * max(dx, dy) + (kObliqueUnit - kLinearUnit) * (dx + dy);
   }
 
  private:
-  static constexpr int kLinearUnit = 5;
-  static constexpr int kObliqueUnit = 7;
 };
 }  // namespace road
