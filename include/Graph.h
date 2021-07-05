@@ -31,7 +31,7 @@ namespace road {
 struct GridLocation {
   int x = 0;
   int y = 0;
-  };
+};
 
 }  // namespace road
 
@@ -78,8 +78,8 @@ class Graph {
   };
   // Function
   static int cost(GridLocation current, GridLocation next) {
-    return abs(next.x - current.x) + abs(next.y - current.y) == 2 ? kObliqueUnit
-                                                                  : kLinearUnit;
+    return (next.x - current.x) * (next.y - current.y) == 0 ? kLinearUnit
+                                                            : kObliqueUnit;
   };
 
  private:
@@ -90,8 +90,10 @@ class Graph {
   bool passable(GridLocation id) const {
     return _walls.find(id) == _walls.end();
   }
-  // // The ratio of unit distance of the diagonal to unit distance of the straight
-  // // line is 1.414 : 1 ≈ 1.4 : 1 = 7 ： 5, so we use the approximate proportion
+  // // The ratio of unit distance of the diagonal to unit distance of the
+  // straight
+  // // line is 1.414 : 1 ≈ 1.4 : 1 = 7 ： 5, so we use the approximate
+  // proportion
   // // of integral type to speed up the operation
   // static constexpr int kLinearUnit = 5;
   // static constexpr int kObliqueUnit = 7;

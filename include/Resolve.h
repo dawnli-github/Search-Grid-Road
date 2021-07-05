@@ -37,10 +37,9 @@ class Resolve {
   static double get_cost(vector<GridLocation> path) {
     double cost = 0;
     for (long unsigned int i = 0; i < path.size() - 1; ++i) {
-      cost +=
-          abs(path[i + 1].x - path[i].x) + abs(path[i + 1].y - path[i].y) == 2
-              ? sqrt(2)
-              : 1.0;
+      cost += (path[i + 1].x - path[i].x) * (path[i + 1].y - path[i].y) == 0
+                  ? 1.0
+                  : sqrt(2);
     }
     return cost;
   }
