@@ -29,6 +29,7 @@ class Resolve {
       _graph.set_wall(wall);
     }
   }
+  void set_wall(const GridLocation& wall) { _graph.set_wall(wall); }
   void set_start(const GridLocation start) { _start = start; }
   void set_goal(const GridLocation goal) { _goal = goal; }
   // Work flow///
@@ -46,10 +47,6 @@ class Resolve {
   // Get
   GridLocation get_start() const { return _start; }
   GridLocation get_goal() const { return _goal; }
-  // Reconstruct path
-  static vector<GridLocation> reconstruct_path(
-      GridLocation start, GridLocation goal,
-      unordered_map<GridLocation, GridLocation> came_from);
   // Draw
   static void draw(const Graph& graph, vector<GridLocation>* path);
 

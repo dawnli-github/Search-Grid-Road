@@ -44,7 +44,7 @@ class AbstractModel {
 template <typename Graph, typename Location>
 class AStarModel : public AbstractModel<Location> {
  public:
-  AStarModel(Graph graph, Location start, Location goal,
+  AStarModel(Graph& graph, Location start, Location goal,
              function<double(Location a, Location b)> heuristic)
       : _graph(graph), _start(start), _goal(goal), _heuristic(heuristic) {
     printModelName();
@@ -107,7 +107,7 @@ class AStarModel : public AbstractModel<Location> {
 template <typename Graph, typename Location>
 class DijkstraModel : public AbstractModel<Location> {
  public:
-  DijkstraModel(Graph graph, Location start, Location goal)
+  DijkstraModel(Graph& graph, Location start, Location goal)
       : _graph(graph), _start(start), _goal(goal) {
     printModelName();
     run();
