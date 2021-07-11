@@ -26,7 +26,7 @@ void Resolve::run(string model_name, string heuristic_name) {
   auto model = factory->setModel(model_name, heuristic_name);
   cout << endl << "The Heuristic Type : " << heuristic_name << endl << endl;
   vector<GridLocation> path = model->get_path();
-  // draw(_graph, &path);
+  draw(_graph, &path);
   cout << endl << "The Model Cost :" << get_cost(path) << endl;
   cout << endl
        << "The Model Running Time :" << model->get_run_time() << "s" << endl;

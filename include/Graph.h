@@ -31,7 +31,6 @@ struct GridLocation {
 }  // namespace road
 
 namespace std {
-
 /* implement hash function so we can put GridLocation into an unordered_set */
 template <>
 struct hash<road::GridLocation> {
@@ -70,8 +69,7 @@ class Graph {
   };
   // Function
   static double cost(GridLocation current, GridLocation next) {
-    return (next.x - current.x) * (next.y - current.y) == 0 ? 1.0
-                                                            : sqrt(2);
+    return (next.x - current.x) * (next.y - current.y) == 0 ? 1.0 : sqrt(2);
   };
 
  private:

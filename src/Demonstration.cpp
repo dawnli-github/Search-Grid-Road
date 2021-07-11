@@ -20,13 +20,13 @@ using namespace road;
 
 int main() {
   // Random init
-  const int size = 3000;
+  const int size = 30;
   Resolve test;
   test.set_size(size, size);
   vector<GridLocation> walls;
   random_device rand_engine;
-  uniform_int_distribution<int> rand_start(0, size / 4);
-  uniform_int_distribution<int> rand_end(3 * size / 4, size - 1);
+  uniform_int_distribution<int> rand_start(0, log2(size));
+  uniform_int_distribution<int> rand_end(size - log2(size), size - 1);
   uniform_int_distribution<int> rand_id(0, size - 1);
   GridLocation start{rand_start(rand_engine), rand_start(rand_engine)};
   GridLocation goal{rand_end(rand_engine), rand_end(rand_engine)};
@@ -41,7 +41,7 @@ int main() {
   walls.clear();
   test.set_start(start);
   test.set_goal(goal);
-  // test.run("Dijkstra", "null");
-  // test.run("A*", "manhattan");
+  test.run("Dijkstra", "null");
+  test.run("A*", "manhattan");
   test.run("A*", "optManhattan");
 }
